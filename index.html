@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0b0b0e">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Larissa Campos · Personal Trainer Presencial e Online">
-<meta property="og:description" content="Musculação com ciência e acolhimento. Presencial na Zona Sul do Rio ou online no meu app. +1.000 alunos treinados.">
+<meta property="og:description" content="Treino personalizado com acolhimento e acompanhamento de verdade. Presencial na Zona Sul do Rio, online no meu app ou ao ar livre. +1.000 alunos treinados.">
 <meta property="og:image" content="https://laricampos7.github.io/larissa-campos-site/img/larissa-hero.jpg">
 <link rel="icon" href="img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,10 +169,7 @@ footer .flogo{height:54px;width:auto;margin-bottom:6px}
 .rio li{position:relative;padding-left:30px;font-size:.95rem}
 .rio li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF1940' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
 .rio-side{display:flex;flex-direction:column;justify-content:flex-end;gap:14px}
-.rio[data-lang="pt"] [lang="en"],.rio[data-lang="en"] [lang="pt"]{display:none}
-.rio > .rio-lang{position:absolute;top:18px;right:18px;z-index:3;display:flex;background:rgba(0,0,0,.35);border:1px solid #ffffff40;border-radius:999px;padding:3px}
-.rio-lang button{background:none;border:0;color:#fff;font:800 .75rem Inter,sans-serif;letter-spacing:1px;padding:7px 12px;border-radius:999px;cursor:pointer}
-.rio-lang button[aria-pressed="true"]{background:#fff;color:#0b0b0e}
+html[lang="pt-BR"] .rio [lang="en"],html[lang="en"] .rio [lang="pt"]{display:none}
 .rio-num em{font-style:normal;font-size:1.6rem;color:#ffd6de;margin:0 10px;vertical-align:middle;letter-spacing:1px}
 .rio-num{font-family:Anton,sans-serif;font-size:5.5rem;line-height:.9;color:#fff}
 .rio-num small{display:block;font-size:1.1rem;letter-spacing:2px;color:#ffd6de}
@@ -180,7 +177,22 @@ footer .flogo{height:54px;width:auto;margin-bottom:6px}
 .rio-spots span{font-size:.75rem;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid #ffffff55;color:#fff}
 .rio .btn{width:100%}
 .rio .mini{font-size:.78rem;opacity:.75;text-align:center}
-@media(max-width:860px){.rio{grid-template-columns:1fr;padding:64px 28px 28px}.rio > .rio-lang{top:16px;left:28px;right:auto}.rio .skyline{width:100%}.rio-num{font-size:4.2rem}}
+@media(max-width:860px){.rio{grid-template-columns:1fr;padding:28px}.rio .skyline{width:100%}.rio-num{font-size:4.2rem}}
+
+/* IDIOMA */
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang-sw{display:flex;border:1px solid #ffffff33;border-radius:999px;padding:3px}
+.lang-sw button{background:none;border:0;color:var(--mut);font:800 .72rem Inter,sans-serif;letter-spacing:1px;padding:6px 10px;border-radius:999px;cursor:pointer}
+.lang-sw button[aria-pressed="true"]{background:#fff;color:#0b0b0e}
+@media(max-width:480px){.nav-right{gap:8px}.lang-sw button{padding:5px 8px}}
+/* No inglês, o pacote do Rio vem primeiro */
+#caminhos .wrap{display:flex;flex-direction:column}
+#caminhos .path-grid{order:2}
+#caminhos .rio{order:3}
+html[lang="en"] #caminhos .rio{order:1;margin:50px 0 0}
+html[lang="en"] #caminhos .path-grid{margin-top:24px}
+html[lang="en"] .hero h1{font-size:clamp(2.3rem,5.2vw,4.3rem)}
+.review .tr{display:block;margin-top:10px;font-size:.72rem;color:var(--mut);font-style:normal;letter-spacing:.3px}
 
 /* GOOGLE */
 .google{background:var(--bg)}
@@ -282,13 +294,16 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <a href="#topo" class="brand"><img src="img/logo.png" alt="Larissa de Campos Personal Trainer"></a>
     <div class="nav-links">
-      <a href="#diferencial">Diferencial</a>
-      <a href="#caminhos">Planos</a>
-      <a href="#metodo">Método</a>
-      <a href="#faq">Dúvidas</a>
-      <a href="#avaliacoes">Avaliações</a>
+      <a href="#diferencial"><span data-t="t0">Diferencial</span></a>
+      <a href="#caminhos"><span data-t="t1">Planos</span></a>
+      <a href="#metodo"><span data-t="t2">Método</span></a>
+      <a href="#faq"><span data-t="t3">Dúvidas</span></a>
+      <a href="#avaliacoes"><span data-t="t4">Avaliações</span></a>
     </div>
-    <a href="#caminhos" class="btn btn-red">Quero começar</a>
+    <div class="nav-right">
+      <div class="lang-sw" role="group" aria-label="Idioma / Language"><button type="button" data-setlang="pt">PT</button><button type="button" data-setlang="en">EN</button></div>
+      <a href="#caminhos" class="btn btn-red"><span data-t="t5">Quero começar</span></a>
+    </div>
   </div>
 </nav>
 
@@ -297,19 +312,19 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="hero-grid">
       <div class="reveal">
-        <span class="eyebrow">Personal Trainer · Presencial & Online</span>
-        <h1 class="display">Seu corpo muda.<br>Sua cabeça <span class="red">muda junto.</span><br><span class="stroke">E dessa vez fica.</span></h1>
-        <p class="sub">Musculação com ciência, acolhimento e acompanhamento de verdade: <b>presencial na Zona Sul do Rio</b> ou <b>online, no meu app exclusivo</b>, de onde você estiver. Para quem tem pouco tempo e já cansou de começar e parar.</p>
+        <span class="eyebrow"><span data-t="t6">Personal Trainer · Presencial & Online</span></span>
+        <h1 class="display"><span data-t="t7">Seu corpo muda<br>quando sua cabeça <span class="red">muda junto.</span></span></h1>
+        <p class="sub"><span data-t="t8">Treino com acolhimento e acompanhamento de verdade. Atividade física não precisa ser uma obrigação: deixa eu te mostrar como o treino pode transformar não só a sua estética, mas a sua qualidade de vida. <b>Presencial na Zona Sul do Rio de Janeiro</b> ou <b>online, pela minha plataforma de treinos</b>.</span></p>
         <div class="hero-ctas">
-          <button class="btn btn-red" data-open-apply>Aplicar p/ presencial
+          <button class="btn btn-red" data-open-apply><span data-t="t116">Aplicar p/ presencial</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-          <a class="btn btn-white" href="#online" data-checkout>Começar online agora</a>
+          <a class="btn btn-white" href="#online" data-checkout><span data-t="t9">Começar online agora</span></a>
         </div>
-        <p class="cta-note">Vagas presenciais limitadas por agenda · Online: início em até 72h</p>
+        <p class="cta-note"><span data-t="t10">Vagas presenciais limitadas por agenda · Online: início em até 72h</span></p>
       </div>
       <div class="hero-photo reveal">
         <div class="frame">
-          <img src="img/larissa-hero.jpg" alt="Larissa Campos, personal trainer, de braços cruzados">
+          <img id="heroImg" src="img/larissa-hero.jpg" alt="Larissa Campos, personal trainer, de braços cruzados">
         </div>
         <div class="photo-tag">
           <strong>Larissa Campos</strong>
@@ -318,55 +333,52 @@ footer a:hover{color:#fff}
       </div>
     </div>
     <div class="stats reveal">
-      <div class="stat"><b>20<em>+</em></b><span>anos de musculação</span></div>
-      <div class="stat"><b>9<em>+</em></b><span>anos de profissão</span></div>
-      <div class="stat"><b>1.000<em>+</em></b><span>pessoas transformadas</span></div>
-      <div class="stat"><b>5,0<em>★</em></b><span>nota no Google</span></div>
+      <div class="stat"><b>20<em>+</em></b><span><span data-t="t11">anos de musculação</span></span></div>
+      <div class="stat"><b>9<em>+</em></b><span><span data-t="t12">anos de profissão</span></span></div>
+      <div class="stat"><b><span id="statMil">1.000</span><em>+</em></b><span><span data-t="t13">pessoas transformadas</span></span></div>
+      <div class="stat"><b><span id="statNota">5,0</span><em>★</em></b><span><span data-t="t14">nota no Google</span></span></div>
     </div>
   </div>
 </header>
 
-<div class="marquee" aria-hidden="true"><div class="track">
-  <span>Emagrecimento com saúde</span><span>Força para a vida real</span><span>Treino que cabe na sua rotina</span><span>Constância, não perfeição</span><span>Atendimento humanizado</span><span>Resultado que se mantém</span>
-  <span>Emagrecimento com saúde</span><span>Força para a vida real</span><span>Treino que cabe na sua rotina</span><span>Constância, não perfeição</span><span>Atendimento humanizado</span><span>Resultado que se mantém</span>
-</div></div>
+<div class="marquee" aria-hidden="true"><div class="track" id="mqTrack"></div></div>
 
 <!-- 2. O GRANDE PROBLEMA -->
 <section class="problem" id="diferencial">
   <div class="wrap">
-    <span class="eyebrow reveal">O grande problema</span>
-    <h2 class="display reveal">Você não falhou.<br><span class="red">O método é que falhou com você.</span></h2>
-    <p class="lead reveal">Se você já pagou academia e parou no segundo mês, já baixou planilha pronta da internet, já teve personal que só contava repetição olhando o celular… a culpa nunca foi sua falta de força de vontade.</p>
+    <span class="eyebrow reveal"><span data-t="t15">O grande problema</span></span>
+    <h2 class="display reveal"><span data-t="t16">Você não falhou.<br><span class="red">O método é que falhou com você.</span></span></h2>
+    <p class="lead reveal"><span data-t="t17">Se você já pagou academia e parou no segundo mês, já baixou planilha pronta da internet, já teve personal que só contava repetição olhando o celular… a culpa nunca foi sua falta de força de vontade.</span></p>
 
     <div class="pain-grid">
-      <div class="pain reveal"><div class="x">!</div><h3>"Odeio academia"</h3><p>Ambiente frio, você se sente perdido(a), ninguém te explica o porquê de nada. Normal não querer voltar.</p></div>
-      <div class="pain reveal"><div class="x">!</div><h3>"Já tentei de tudo"</h3><p>Dieta da moda, treino do influencer, app genérico. Funciona 3 semanas, depois a vida acontece e tudo desaba.</p></div>
-      <div class="pain reveal"><div class="x">!</div><h3>"Não tenho tempo"</h3><p>Trabalho, filhos, reuniões. Um treino que ignora sua rotina real está condenado desde o primeiro dia.</p></div>
+      <div class="pain reveal"><div class="x">!</div><h3><span data-t="t18">"Odeio academia"</span></h3><p><span data-t="t19">Ambiente frio, você se sente perdido(a), ninguém te explica o porquê de nada. Normal não querer voltar.</span></p></div>
+      <div class="pain reveal"><div class="x">!</div><h3><span data-t="t20">"Já tentei de tudo"</span></h3><p><span data-t="t21">Dieta da moda, treino do influencer, app genérico. Funciona 3 semanas, depois a vida acontece e tudo desaba.</span></p></div>
+      <div class="pain reveal"><div class="x">!</div><h3><span data-t="t22">"Não tenho tempo"</span></h3><p><span data-t="t23">Trabalho, filhos, reuniões. Um treino que ignora sua rotina real está condenado desde o primeiro dia.</span></p></div>
     </div>
 
     <div class="versus reveal">
       <div class="vs-them">
-        <h3>O personal "padrão"</h3>
+        <h3><span data-t="t24">O personal "padrão"</span></h3>
         <ul>
-          <li>Entrega uma planilha e some</li>
-          <li>O mesmo treino para todo mundo</li>
-          <li>Conta repetição olhando o celular</li>
-          <li>Você depende dele(a) para sempre</li>
+          <li><span data-t="t25">Entrega uma planilha e some</span></li>
+          <li><span data-t="t26">O mesmo treino para todo mundo</span></li>
+          <li><span data-t="t27">Conta repetição olhando o celular</span></li>
+          <li><span data-t="t28">Você depende dele(a) para sempre</span></li>
         </ul>
       </div>
       <div class="vs-me">
-        <h3 class="red">Comigo é diferente</h3>
+        <h3 class="red"><span data-t="t29">Comigo é diferente</span></h3>
         <ul>
-          <li>Te escuto antes de te treinar: rotina, história, dores e medos</li>
-          <li>Treino construído para o <b>seu</b> corpo e o <b>seu</b> objetivo</li>
-          <li>Presença total: técnica, ajuste e incentivo em cada série</li>
-          <li>Te ensino a entender o treino. Você ganha autonomia e confiança</li>
+          <li><span data-t="t30">Te escuto antes de te treinar: rotina, história, dores e medos</span></li>
+          <li><span data-t="t31">Treino construído para o <b>seu</b> corpo e o <b>seu</b> objetivo</span></li>
+          <li><span data-t="t32">Presença total: técnica, ajuste e incentivo em cada série</span></li>
+          <li><span data-t="t33">Te ensino a entender o treino. Você ganha autonomia e confiança</span></li>
         </ul>
       </div>
     </div>
 
     <div class="turn reveal">
-      <p>Eu não quero só acompanhar seu treino.<br><span class="red">Quero mudar a forma como você enxerga a atividade física.</span></p>
+      <p><span data-t="t34">Eu não quero só acompanhar seu treino.<br><span class="red">Quero mudar a forma como você enxerga a atividade física.</span></span></p>
     </div>
   </div>
 </section>
@@ -375,52 +387,49 @@ footer a:hover{color:#fff}
 <section class="paths" id="caminhos">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow reveal">Escolha seu caminho</span>
-      <h2 class="display reveal">Dois formatos.<br><span class="red">O mesmo compromisso com você.</span></h2>
+      <span class="eyebrow reveal"><span data-t="t35">Escolha seu caminho</span></span>
+      <h2 class="display reveal"><span data-t="t36">Dois formatos.<br><span class="red">O mesmo compromisso com você.</span></span></h2>
     </div>
 
     <div class="path-grid">
       <!-- PRESENCIAL -->
       <article class="path path-pres reveal" id="presencial">
-        <span class="tag">Presencial · Zona Sul RJ</span>
-        <h3>Personal Trainer Presencial</h3>
-        <p class="for">Para quem quer atenção total, ao lado, em cada movimento, e precisa de alguém que transforme o treino no melhor momento do dia.</p>
+        <span class="tag"><span data-t="t37">Presencial · Zona Sul RJ</span></span>
+        <h3><span data-t="t38">Personal Trainer Presencial</span></h3>
+        <p class="for"><span data-t="t39">Para quem quer atenção total, ao lado, em cada movimento, e precisa de alguém que transforme o treino no melhor momento do dia.</span></p>
         <ul>
-          <li>Aulas 100% personalizadas, com correção de técnica em tempo real</li>
-          <li>Atendimento humanizado e acolhedor, do primeiro dia ao seu melhor dia</li>
-          <li>Treino ajustado a cada ciclo, conforme a sua evolução</li>
-          <li>Acesso ao meu app e suporte no WhatsApp entre as aulas</li>
+          <li><span data-t="t40">Aulas 100% personalizadas, com correção de técnica em tempo real</span></li>
+          <li><span data-t="t41">Atendimento humanizado e acolhedor, do primeiro dia ao seu melhor dia</span></li>
+          <li><span data-t="t42">Treino ajustado a cada ciclo, conforme a sua evolução</span></li>
+          <li><span data-t="t43">Acesso ao meu app e suporte no WhatsApp entre as aulas</span></li>
         </ul>
-        <div class="scarcity"><span class="dot"></span>Agenda limitada: atendo poucos alunos para manter a qualidade</div>
-        <button class="btn btn-dark" data-open-apply>Aplicar para uma vaga</button>
-        <p class="mini">Você preenche em 1 minuto e eu retorno pessoalmente</p>
+        <div class="scarcity"><span class="dot"></span><span data-t="t44">Agenda limitada: atendo poucos alunos para manter a qualidade</span></div>
+        <button class="btn btn-dark" data-open-apply><span data-t="t45">Aplicar para uma vaga</span></button>
+        <p class="mini"><span data-t="t46">Você preenche em 1 minuto e eu retorno pessoalmente</span></p>
       </article>
 
       <!-- ONLINE -->
       <article class="path path-onl reveal" id="online">
         <div class="app-mock"></div>
-        <span class="tag">Online · Qualquer lugar</span>
-        <h3>Consultoria Online</h3>
-        <p class="for">Para quem tem rotina imprevisível e quer treinar onde e quando quiser (academia, casa ou viagem) sem abrir mão de direção profissional.</p>
+        <span class="tag"><span data-t="t47">Online · Qualquer lugar</span></span>
+        <h3><span data-t="t48">Consultoria Online</span></h3>
+        <p class="for"><span data-t="t49">Para quem tem rotina imprevisível e quer treinar onde e quando quiser (academia, casa ou viagem) sem abrir mão de direção profissional.</span></p>
         <ul>
-          <li><b>Videochamada de 30 min</b> comigo para entender seu objetivo, sua rotina e seu histórico</li>
-          <li>Treino personalizado no <b>meu app próprio</b>, com vídeos de cada exercício</li>
-          <li>Você registra cargas e check-ins, eu acompanho e ajusto em tempo real</li>
-          <li>Metas, conquistas e ranking de consistência que te mantêm motivado(a)</li>
-          <li>Suporte direto comigo via WhatsApp</li>
+          <li><span data-t="t50"><b>Videochamada de 30 min</b> comigo para entender seu objetivo, sua rotina e seu histórico</span></li>
+          <li><span data-t="t51">Treino personalizado no <b>meu app próprio</b>, com vídeos de cada exercício</span></li>
+          <li><span data-t="t52">Você registra cargas e check-ins, eu acompanho e ajusto em tempo real</span></li>
+          <li><span data-t="t53">Metas, conquistas e ranking de consistência que te mantêm motivado(a)</span></li>
+          <li><span data-t="t54">Suporte direto comigo via WhatsApp</span></li>
         </ul>
-        <div class="scarcity"><span class="dot"></span>Início em até 72h após a videochamada</div>
-        <a class="btn btn-red" href="#" data-checkout>Quero minha consultoria</a>
-        <p class="mini">Planos de 3 ou 6 meses · Você fecha direto comigo no WhatsApp</p>
+        <div class="scarcity"><span class="dot"></span><span data-t="t55">Início em até 72h após a videochamada</span></div>
+        <a class="btn btn-red" href="#" data-checkout><span data-t="t56">Quero minha consultoria</span></a>
+        <p class="mini"><span data-t="t57">Planos de 3 ou 6 meses · Você fecha direto comigo no WhatsApp</span></p>
       </article>
     </div>
 
     <!-- PACOTE TURISTA -->
-    <article class="rio reveal" id="rio" data-lang="pt">
+    <article class="rio reveal" id="rio">
       <svg class="skyline" viewBox="0 0 600 200" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path fill="#fff" d="M0 200V170c30-6 55-30 80-28 20 2 30 18 50 16 28-3 40-60 70-62 25-2 30 40 55 42 18 1 24-14 40-14 20 0 26 30 48 30 16 0 22-22 38-60 14-34 28-72 52-74 26-2 36 56 48 92 8 24 20 40 44 42 30 3 50-20 75-18v114z"/></svg>
-      <div class="rio-lang" role="group" aria-label="Idioma / Language">
-        <button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
       <div>
         <span class="tag"><span lang="pt">Novo · Para quem visita o Rio</span><span lang="en">New · Visiting Rio?</span></span>
         <h3>Rio Fit Experience</h3>
@@ -447,15 +456,15 @@ footer a:hover{color:#fff}
 <!-- 4. MÉTODO -->
 <section class="method" id="metodo">
   <div class="wrap">
-    <span class="eyebrow reveal">Como funciona o método</span>
-    <h2 class="display reveal">Do primeiro "oi" ao <span class="red">seu plano na mão.</span></h2>
-    <p class="lead reveal">Nada de treino pronto. Cada etapa existe para que o seu plano seja feito sob medida e para que você entenda o que está fazendo.</p>
+    <span class="eyebrow reveal"><span data-t="t58">Como funciona o método</span></span>
+    <h2 class="display reveal"><span data-t="t59">Do primeiro "oi" ao <span class="red">seu plano na mão.</span></span></h2>
+    <p class="lead reveal"><span data-t="t60">Nada de treino pronto. Cada etapa existe para que o seu plano seja feito sob medida e para que você entenda o que está fazendo.</span></p>
 
     <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h3>Conversa inicial</h3><p>Presencial ou por videochamada de 30 min (no online), você me conta sua rotina, objetivo e histórico. Eu te mostro o melhor caminho.</p><span class="when">Dia 1</span></div>
-      <div class="step reveal"><div class="num">02</div><h3>Anamnese completa</h3><p>Saúde, lesões, sono, rotina e histórico com treino. É aqui que eu te conheço de verdade e defino seu ponto de partida.</p><span class="when">Dia 1 a 3</span></div>
-      <div class="step reveal"><div class="num">03</div><h3>Plano sob medida</h3><p>Monto seu treino por ciclos, com metas claras para o trimestre. Presencial: nas aulas. Online: no seu app, com vídeos.</p><span class="when">Até 72h</span></div>
-      <div class="step reveal"><div class="num">04</div><h3>Acompanhar e ajustar</h3><p>Eu vejo suas cargas e check-ins, ajusto o que precisa e reviso seu plano a cada ciclo. Resultado é processo, não sorte.</p><span class="when">Sempre</span></div>
+      <div class="step reveal"><div class="num">01</div><h3><span data-t="t61">Conversa inicial</span></h3><p><span data-t="t62">Presencial ou por videochamada de 30 min (no online), você me conta sua rotina, objetivo e histórico. Eu te mostro o melhor caminho.</span></p><span class="when"><span data-t="t63">Dia 1</span></span></div>
+      <div class="step reveal"><div class="num">02</div><h3><span data-t="t64">Anamnese completa</span></h3><p><span data-t="t65">Saúde, lesões, sono, rotina e histórico com treino. É aqui que eu te conheço de verdade e defino seu ponto de partida.</span></p><span class="when"><span data-t="t66">Dia 1 a 3</span></span></div>
+      <div class="step reveal"><div class="num">03</div><h3><span data-t="t67">Plano sob medida</span></h3><p><span data-t="t68">Monto seu treino por ciclos, com metas claras para o trimestre. Presencial: nas aulas. Online: no seu app, com vídeos.</span></p><span class="when"><span data-t="t69">Até 72h</span></span></div>
+      <div class="step reveal"><div class="num">04</div><h3><span data-t="t70">Acompanhar e ajustar</span></h3><p><span data-t="t71">Eu vejo suas cargas e check-ins, ajusto o que precisa e reviso seu plano a cada ciclo. Resultado é processo, não sorte.</span></p><span class="when"><span data-t="t72">Sempre</span></span></div>
     </div>
   </div>
 </section>
@@ -467,10 +476,10 @@ footer a:hover{color:#fff}
       <img src="img/larissa-palco.jpg" alt="Larissa Campos competindo em campeonato de fisiculturismo" loading="lazy">
     </div>
     <div class="reveal">
-      <span class="eyebrow">Quem vai cuidar de você</span>
-      <h2 class="display">Prazer, <span class="red">Larissa Campos.</span></h2>
-      <p>Faz <b>20 anos</b> que a musculação faz parte da minha vida e quase <b>10 anos</b> que eu uso isso para transformar a vida de outras pessoas. Já passaram pelas minhas mãos <b>mais de mil alunos</b>: gente ocupada, gente que odiava academia, gente que já tinha desistido de si.</p>
-      <p>O que eu aprendi com cada um deles é simples: <b>ninguém muda de corpo sem mudar de relação com o treino.</b> Vivi isso na pele, inclusive nos palcos do fisiculturismo. Por isso uno ciência do exercício com escuta e acolhimento, e criei minha própria plataforma para que nenhum aluno fique sozinho entre um treino e outro.</p>
+      <span class="eyebrow"><span data-t="t73">Quem vai cuidar de você</span></span>
+      <h2 class="display"><span data-t="t74">Prazer, <span class="red">Larissa Campos.</span></span></h2>
+      <p><span data-t="t75">Faz <b>20 anos</b> que a musculação faz parte da minha vida e quase <b>10 anos</b> que eu uso isso para transformar a vida de outras pessoas. Já passaram pelas minhas mãos <b>mais de mil alunos</b>: gente ocupada, gente que odiava academia, gente que já tinha desistido de si.</span></p>
+      <p><span data-t="t76">O que eu aprendi com cada um deles é simples: <b>ninguém muda de corpo sem mudar de relação com o treino.</b> Vivi isso na pele, inclusive nos palcos do fisiculturismo. Por isso uno ciência do exercício com escuta e acolhimento, e criei minha própria plataforma para que nenhum aluno fique sozinho entre um treino e outro.</span></p>
     </div>
   </div>
 </section>
@@ -479,19 +488,19 @@ footer a:hover{color:#fff}
 <section class="faq" id="faq">
   <div class="wrap faq-grid">
     <div class="reveal">
-      <span class="eyebrow">Dúvidas frequentes</span>
-      <h2 class="display">Ainda com <span class="red">alguma dúvida?</span></h2>
-      <p class="lead">Se a sua pergunta não estiver aqui, me chama no WhatsApp. Quem responde sou eu.</p>
-      <a class="btn btn-ghost" style="margin-top:24px" href="#" data-wa="Oi, Larissa! Tenho uma dúvida antes de começar.">Falar com a Larissa</a>
+      <span class="eyebrow"><span data-t="t77">Dúvidas frequentes</span></span>
+      <h2 class="display"><span data-t="t78">Ainda com <span class="red">alguma dúvida?</span></span></h2>
+      <p class="lead"><span data-t="t79">Se a sua pergunta não estiver aqui, me chama no WhatsApp. Quem responde sou eu.</span></p>
+      <a class="btn btn-ghost" style="margin-top:24px" href="#" data-wa="duvida"><span data-t="t80">Falar com a Larissa</span></a>
     </div>
     <div class="reveal">
-      <details><summary>Sou iniciante total. Posso começar?</summary><p>Pode, e deve! Iniciantes são quem mais se beneficia de um acompanhamento individual. Começamos pela base: técnica, mobilidade e confiança. A intensidade sobe no seu ritmo, sem pressa e sem risco.</p></details>
-      <details><summary>Na consultoria online eu converso com você antes?</summary><p>Sim. Todo aluno online começa com uma videochamada de 30 minutos comigo. É ali que eu entendo seu objetivo, sua rotina, suas limitações e o que já deu errado antes, para montar um plano que realmente funcione para você.</p></details>
-      <details><summary>Em quanto tempo você responde na consultoria online?</summary><p>Respondo pelo WhatsApp em dias úteis, normalmente no mesmo dia (em até 24h). Dúvidas de execução podem ser enviadas com vídeo, e eu corrijo sua técnica à distância.</p></details>
-      <details><summary>Como funciona a renovação do plano?</summary><p>Os planos são de 3 ou 6 meses. Antes do fim, revisamos juntos a sua evolução desde o ponto de partida e definimos as novas metas. Você decide se renova, sem renovação automática surpresa.</p></details>
-      <details><summary>Tenho pouco tempo. Quantas vezes por semana preciso treinar?</summary><p>Monto o plano a partir do tempo que você realmente tem. Com 2 a 3 treinos bem estruturados por semana já é possível emagrecer, ganhar força e disposição. Constância vence volume.</p></details>
-      <details><summary>Preciso de academia para a consultoria online?</summary><p>Não necessariamente. Monto o treino com o que você tem disponível: academia completa, academia do prédio ou em casa com poucos equipamentos.</p></details>
-      <details><summary>Tenho dor ou lesão. Posso treinar?</summary><p>Na maioria dos casos, sim, e o treino bem orientado costuma ajudar. A anamnese identifica essas questões e, quando necessário, trabalho em conjunto com a orientação do seu médico ou fisioterapeuta.</p></details>
+      <details><summary><span data-t="t81">Sou iniciante total. Posso começar?</span></summary><p><span data-t="t82">Pode, e deve! Iniciantes são quem mais se beneficia de um acompanhamento individual. Começamos pela base: técnica, mobilidade e confiança. A intensidade sobe no seu ritmo, sem pressa e sem risco.</span></p></details>
+      <details><summary><span data-t="t83">Na consultoria online eu converso com você antes?</span></summary><p><span data-t="t84">Sim. Todo aluno online começa com uma videochamada de 30 minutos comigo. É ali que eu entendo seu objetivo, sua rotina, suas limitações e o que já deu errado antes, para montar um plano que realmente funcione para você.</span></p></details>
+      <details><summary><span data-t="t85">Em quanto tempo você responde na consultoria online?</span></summary><p><span data-t="t86">Respondo pelo WhatsApp em dias úteis, normalmente no mesmo dia (em até 24h). Dúvidas de execução podem ser enviadas com vídeo, e eu corrijo sua técnica à distância.</span></p></details>
+      <details><summary><span data-t="t87">Como funciona a renovação do plano?</span></summary><p><span data-t="t88">Os planos são de 3 ou 6 meses. Antes do fim, revisamos juntos a sua evolução desde o ponto de partida e definimos as novas metas. Você decide se renova, sem renovação automática surpresa.</span></p></details>
+      <details><summary><span data-t="t89">Tenho pouco tempo. Quantas vezes por semana preciso treinar?</span></summary><p><span data-t="t90">Monto o plano a partir do tempo que você realmente tem. Com 2 a 3 treinos bem estruturados por semana já é possível emagrecer, ganhar força e disposição. Constância vence volume.</span></p></details>
+      <details><summary><span data-t="t91">Preciso de academia para a consultoria online?</span></summary><p><span data-t="t92">Não necessariamente. Monto o treino com o que você tem disponível: academia completa, academia do prédio ou em casa com poucos equipamentos.</span></p></details>
+      <details><summary><span data-t="t93">Tenho dor ou lesão. Posso treinar?</span></summary><p><span data-t="t94">Na maioria dos casos, sim, e o treino bem orientado costuma ajudar. A anamnese identifica essas questões e, quando necessário, trabalho em conjunto com a orientação do seu médico ou fisioterapeuta.</span></p></details>
     </div>
   </div>
 </section>
@@ -500,9 +509,9 @@ footer a:hover{color:#fff}
 <section class="google" id="avaliacoes">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow reveal">Avaliações reais</span>
-      <h2 class="display reveal">Quem treina comigo <span class="red">fala por mim.</span></h2>
-      <p class="lead reveal">O que meus alunos escreveram, por conta própria, no perfil da minha empresa no Google.</p>
+      <span class="eyebrow reveal"><span data-t="t95">Avaliações reais</span></span>
+      <h2 class="display reveal"><span data-t="t96">Quem treina comigo <span class="red">fala por mim.</span></span></h2>
+      <p class="lead reveal"><span data-t="t97">O que meus alunos escreveram, por conta própria, no perfil da minha empresa no Google.</span></p>
     </div>
 
     <div class="g-head reveal">
@@ -510,14 +519,14 @@ footer a:hover{color:#fff}
         <div class="g-logo"><svg viewBox="0 0 48 48" width="32" height="32"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg></div>
         <div>
           <h3 id="gNome">Larissa de Campos · Personal Trainer</h3>
-          <p>Personal trainer · Zona Sul, Rio de Janeiro</p>
+          <p><span data-t="t98">Personal trainer · Zona Sul, Rio de Janeiro</span></p>
         </div>
       </div>
       <div class="g-score">
         <b id="gNota">5,0</b>
         <div><span class="stars">★★★★★</span><small id="gTotal">avaliações no Google</small></div>
       </div>
-      <a class="btn btn-red" id="gLink" href="#" target="_blank" rel="noopener">Ver minha empresa no Google</a>
+      <a class="btn btn-red" id="gLink" href="#" target="_blank" rel="noopener"><span data-t="t99">Ver minha empresa no Google</span></a>
     </div>
 
     <div class="reviews" id="reviews"></div>
@@ -527,23 +536,23 @@ footer a:hover{color:#fff}
 <!-- CTA FINAL -->
 <section class="final">
   <div class="wrap">
-    <h2 class="display">A melhor versão de você<br>não vai esperar a segunda-feira.</h2>
-    <p>Escolha o formato que cabe na sua vida hoje. O primeiro passo é uma conversa. O resto, a gente constrói junto.</p>
+    <h2 class="display"><span data-t="t100">A melhor versão de você<br>não vai esperar a segunda-feira.</span></h2>
+    <p><span data-t="t101">Escolha o formato que cabe na sua vida hoje. O primeiro passo é uma conversa. O resto, a gente constrói junto.</span></p>
     <div class="ctas">
-      <button class="btn btn-white" data-open-apply>Aplicar para o presencial</button>
-      <a class="btn btn-ghost" href="#" data-checkout>Começar a consultoria online</a>
+      <button class="btn btn-white" data-open-apply><span data-t="t102">Aplicar para o presencial</span></button>
+      <a class="btn btn-ghost" href="#" data-checkout><span data-t="t103">Começar a consultoria online</span></a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span><img class="flogo" src="img/logo.png" alt="Larissa de Campos Personal Trainer"><br>© <span id="ano"></span> Larissa de Campos · Consultoria Esportiva · CREF 076634-G/RJ</span>
-    <span><a href="https://instagram.com/trainer_larissacampos" target="_blank" rel="noopener">@trainer_larissacampos</a> · <a href="#" data-wa="Oi, Larissa! Vi seu site e quero saber mais.">WhatsApp</a></span>
+    <span><img class="flogo" src="img/logo.png" alt="Larissa de Campos Personal Trainer"><br>© <span id="ano"></span> <span data-t="t117">Larissa de Campos · Consultoria Esportiva</span> · CREF 076634-G/RJ</span>
+    <span><a href="https://instagram.com/trainer_larissacampos" target="_blank" rel="noopener">@trainer_larissacampos</a> · <a href="#" data-wa="geral">WhatsApp</a></span>
   </div>
 </footer>
 
-<a class="wa-float" href="#" data-wa="Oi, Larissa! Vi seu site e quero saber mais." aria-label="Falar no WhatsApp">
+<a class="wa-float" href="#" data-wa="geral" aria-label="Falar no WhatsApp">
   <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4c-1-1.6-1.5-3.4-1.5-5.2C2.2 6.6 6.6 2.2 12 2.2c2.6 0 5.1 1 6.9 2.9 1.8 1.8 2.9 4.3 2.9 6.9 0 5.4-4.4 9.8-9.8 9.8zM20.3 3.7C18.1 1.5 15.1.2 12 .2 5.5.2.2 5.5.2 12c0 2.1.5 4.1 1.6 5.9L.1 24l6.3-1.6c1.7.9 3.7 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3z"/></svg>
 </a>
 
@@ -551,23 +560,23 @@ footer a:hover{color:#fff}
 <div class="modal" id="apply" role="dialog" aria-modal="true" aria-labelledby="applyTitle">
   <div class="modal-box">
     <button class="close" data-close aria-label="Fechar">×</button>
-    <h3 id="applyTitle">Aplicação · <span class="red">Personal Presencial</span></h3>
-    <p>Atendo um número limitado de alunos para manter a qualidade. Responda rapidinho e eu te retorno pessoalmente no WhatsApp.</p>
+    <h3 id="applyTitle"><span data-t="t104">Aplicação · <span class="red">Personal Presencial</span></span></h3>
+    <p><span data-t="t105">Atendo um número limitado de alunos para manter a qualidade. Responda rapidinho e eu te retorno pessoalmente no WhatsApp.</span></p>
     <form id="applyForm">
-      <div class="fld"><label for="fNome">Seu nome</label><input id="fNome" required placeholder="Como posso te chamar?"></div>
-      <div class="fld"><label>Seu principal objetivo</label>
+      <div class="fld"><label for="fNome"><span data-t="t106">Seu nome</span></label><input id="fNome" required placeholder="Como posso te chamar?"></div>
+      <div class="fld"><label><span data-t="t107">Seu principal objetivo</span></label>
         <div class="chips">
-          <label><input type="radio" name="obj" value="Emagrecimento" required><span>Emagrecer</span></label>
-          <label><input type="radio" name="obj" value="Ganho de massa muscular"><span>Ganhar massa</span></label>
-          <label><input type="radio" name="obj" value="Saúde e qualidade de vida"><span>Saúde e disposição</span></label>
-          <label><input type="radio" name="obj" value="Voltar a treinar"><span>Voltar a treinar</span></label>
+          <label><input type="radio" name="obj" value="Emagrecimento" required><span><span data-t="t108">Emagrecer</span></span></label>
+          <label><input type="radio" name="obj" value="Ganho de massa muscular"><span><span data-t="t109">Ganhar massa</span></span></label>
+          <label><input type="radio" name="obj" value="Saúde e qualidade de vida"><span><span data-t="t110">Saúde e disposição</span></span></label>
+          <label><input type="radio" name="obj" value="Voltar a treinar"><span><span data-t="t111">Voltar a treinar</span></span></label>
         </div></div>
-      <div class="fld"><label for="fBairro">Bairro (Zona Sul)</label><input id="fBairro" required placeholder="Ex.: Botafogo, Copacabana, Laranjeiras…"></div>
-      <div class="fld"><label for="fHora">Melhor período</label>
+      <div class="fld"><label for="fBairro"><span data-t="t112">Bairro (Zona Sul)</span></label><input id="fBairro" required placeholder="Ex.: Botafogo, Copacabana, Laranjeiras…"></div>
+      <div class="fld"><label for="fHora"><span data-t="t113">Melhor período</span></label>
         <select id="fHora"><option>Manhã cedo (6h às 9h)</option><option>Manhã (9h às 12h)</option><option>Tarde</option><option>Noite</option></select></div>
-      <div class="fld"><label for="fExp">Já treinou antes?</label>
+      <div class="fld"><label for="fExp"><span data-t="t114">Já treinou antes?</span></label>
         <select id="fExp"><option>Nunca treinei</option><option>Já treinei, mas parei</option><option>Treino atualmente</option></select></div>
-      <button class="btn btn-red" type="submit">Enviar aplicação pelo WhatsApp</button>
+      <button class="btn btn-red" type="submit"><span data-t="t115">Enviar aplicação pelo WhatsApp</span></button>
     </form>
   </div>
 </div>
@@ -593,52 +602,99 @@ var CONFIG = {
   // Copie o texto real de cada avaliação do seu perfil e cole abaixo.
   // Use só o primeiro nome + inicial do sobrenome (ex.: "Karen A.").
   avaliacoes: [
-    { nome: "Keiko I.", quando: "Avaliação no Google", texto: "Excelente profissional (e pessoa agradabilíssima também)! Foi fundamental no meu retorno aos treinos com avaliação criteriosa, muito conhecimento e experiência. Com ela a minha evolução foi gradual mas constante e sem períodos incapacitantes de dor muscular. Mudou o modo como passei a encarar a musculação. Quem puder tê-la como Personal Trainer ficará muito satisfeito. Recomendo, sem dúvidas!" },
-    { nome: "Lucila M.", quando: "Avaliação no Google", texto: "Faço parte do time desde fevereiro e é a primeira vez que consigo permanecer na academia sem desistir no primeiro mês. A Lari tem muita paciência comigo, sempre me incentiva e adapta os treinos quando preciso, e eu já estou vendo os resultados. Super indico! 🤎" },
-    { nome: "Ex-aluno(a)", quando: "Avaliação no Google", texto: "Já tive a oportunidade de treinar com a Larissa como minha personal e só tenho elogios. Sempre foi muito atenciosa, competente e cuidadosa com os detalhes. Além disso, cobra um valor justo pelo serviço que oferece. Se eu ainda morasse no Rio de Janeiro, sem dúvida voltaria a treinar com ela e confiaria minha saúde física de olhos fechados." },
-    // Para adicionar mais: { nome: "Nome S.", quando: "Avaliação no Google", texto: "..." },
+    { nome: "Keiko I.", quando: "Avaliação no Google", texto_en: "Excellent professional (and a truly lovely person too)! She was essential to my return to training, with a thorough assessment and a great deal of knowledge and experience. With her, my progress was gradual but steady, with no debilitating muscle soreness. She changed the way I approach strength training. Anyone lucky enough to have her as a personal trainer will be very happy. I recommend her without a doubt!", texto: "Excelente profissional (e pessoa agradabilíssima também)! Foi fundamental no meu retorno aos treinos com avaliação criteriosa, muito conhecimento e experiência. Com ela a minha evolução foi gradual mas constante e sem períodos incapacitantes de dor muscular. Mudou o modo como passei a encarar a musculação. Quem puder tê-la como Personal Trainer ficará muito satisfeito. Recomendo, sem dúvidas!" },
+    { nome: "Lucila M.", quando: "Avaliação no Google", texto_en: "I've been part of the team since February, and it's the first time I've stuck with the gym without quitting in the first month. Lari is very patient with me, always encourages me and adapts my workouts when needed, and I'm already seeing results. Highly recommend! 🤎", texto: "Faço parte do time desde fevereiro e é a primeira vez que consigo permanecer na academia sem desistir no primeiro mês. A Lari tem muita paciência comigo, sempre me incentiva e adapta os treinos quando preciso, e eu já estou vendo os resultados. Super indico! 🤎" },
+    { nome: "Ex-aluno(a)", nome_en: "Former client", quando: "Avaliação no Google", texto_en: "I had the chance to train with Larissa as my personal trainer and I have nothing but praise. She was always very attentive, skilled and careful with the details. She also charges a fair price for what she offers. If I still lived in Rio de Janeiro, I'd go back to training with her in a heartbeat and trust her with my health, no questions asked.", texto: "Já tive a oportunidade de treinar com a Larissa como minha personal e só tenho elogios. Sempre foi muito atenciosa, competente e cuidadosa com os detalhes. Além disso, cobra um valor justo pelo serviço que oferece. Se eu ainda morasse no Rio de Janeiro, sem dúvida voltaria a treinar com ela e confiaria minha saúde física de olhos fechados." },
+    // Para adicionar mais: { nome: "Nome S.", quando: "Avaliação no Google", texto: "...", texto_en: "tradução em inglês" },
   ]
 };
 /* ========================================================= */
 
 var waLink = function(msg){ return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg); };
 
-document.querySelectorAll("[data-wa]").forEach(function(a){
-  a.href = waLink(a.getAttribute("data-wa")); a.target = "_blank"; a.rel = "noopener";
-});
-document.querySelectorAll("[data-checkout]").forEach(function(a){
-  a.href = waLink("Oi, Larissa! Vi seu site e quero contratar a Consultoria Online. Podemos agendar a videochamada e ver as formas de pagamento?");
-  a.target = "_blank"; a.rel = "noopener";
-});
+/* ===== IDIOMA (PT / EN) =====
+   Detecta o idioma do celular: português -> PT; qualquer outro -> EN.
+   ?lang=en ou ?lang=pt no link força um idioma. A escolha no botão fica lembrada. */
+var EN = {"t0": "Why me", "t1": "Programs", "t2": "Method", "t3": "FAQ", "t4": "Reviews", "t5": "Get started", "t6": "Personal Trainer · In-Person &amp; Online", "t7": "Your body changes<br>when your mindset <span class=\"red\">changes with it.</span>", "t8": "Training with real care and real accountability. Exercise doesn't have to feel like a chore: let me show you how training can transform not just the way you look, but your whole quality of life. <b>In person in Rio de Janeiro's South Zone</b> or <b>online, through my own training platform</b>.", "t9": "Start online today", "t10": "Limited in-person spots · Online: start within 72h", "t11": "years of lifting", "t12": "years coaching", "t13": "people transformed", "t14": "Google rating", "t15": "The real problem", "t16": "You didn't fail.<br><span class=\"red\">The method failed you.</span>", "t17": "If you've paid for a gym and quit by month two, downloaded a cookie-cutter plan, or had a trainer who counted reps while scrolling their phone… it was never about willpower.", "t18": "\"I hate the gym\"", "t19": "It feels intimidating, you feel lost, and no one ever explains the why behind anything. No wonder you don't want to go back.", "t20": "\"I've tried everything\"", "t21": "Fad diets, influencer workouts, generic apps. It works for three weeks, then life happens and it all falls apart.", "t22": "\"I don't have time\"", "t23": "Work, kids, meetings. A program that ignores your real life is doomed from day one.", "t24": "The \"typical\" trainer", "t25": "Hands you a workout sheet and disappears", "t26": "Same workout for everyone", "t27": "Counts reps while checking their phone", "t28": "Keeps you dependent forever", "t29": "Working with me is different", "t30": "I listen before I train you: your routine, your history, what hurts and what holds you back", "t31": "A program built for <b>your</b> body and <b>your</b> goals", "t32": "Fully present: technique, adjustments and encouragement on every set", "t33": "I teach you to understand your training, so you gain independence and confidence", "t34": "I don't just want to coach your workouts.<br><span class=\"red\">I want to change the way you see exercise.</span>", "t35": "Choose your path", "t36": "Different formats.<br><span class=\"red\">Same commitment to you.</span>", "t37": "In person · Rio's South Zone", "t38": "In-Person Personal Training", "t39": "For those who want someone right beside them on every rep, and a coach who turns training into the best part of the day.", "t40": "100% personalized sessions with real-time technique coaching", "t41": "Warm, human-centered coaching, from day one to your best day", "t42": "Your program evolves every cycle as you progress", "t43": "Access to my app plus WhatsApp support between sessions", "t44": "Limited availability: I keep a small client list to protect quality", "t45": "Apply for a spot", "t46": "Takes one minute. I'll get back to you personally.", "t47": "Online · Anywhere", "t48": "Online Coaching", "t49": "For people with unpredictable schedules who want to train anywhere, anytime (gym, home or on the road) with professional guidance.", "t50": "A <b>30-min video call</b> with me, so I can understand your goals, routine and background", "t51": "A personalized program in <b>my own app</b>, with a video for every exercise", "t52": "You log your weights and check-ins; I track your progress and adjust in real time", "t53": "Goals, achievements and a consistency leaderboard to keep you motivated", "t54": "Direct support from me on WhatsApp", "t55": "Start within 72h of our video call", "t56": "Start my coaching", "t57": "3- or 6-month plans · Sign up directly with me on WhatsApp", "t58": "How the method works", "t59": "From the first \"hi\" to <span class=\"red\">your plan in hand.</span>", "t60": "No cookie-cutter programs. Every step exists so your plan is tailor-made and so you understand exactly what you're doing.", "t61": "Intro chat", "t62": "In person, or on a 30-min video call for online clients, you tell me about your routine, goals and history. I'll show you the best path.", "t63": "Day 1", "t64": "Full health intake", "t65": "Health, injuries, sleep, routine and training history. This is where I really get to know you and set your starting point.", "t66": "Days 1 to 3", "t67": "Tailor-made plan", "t68": "I build your program in cycles, with clear goals for each quarter. In person: during our sessions. Online: in your app, with videos.", "t69": "Within 72h", "t70": "Track and adjust", "t71": "I review your weights and check-ins, tweak what's needed and update your plan every cycle. Results are a process, not luck.", "t72": "Always", "t73": "Who will be coaching you", "t74": "Nice to meet you, <span class=\"red\">I'm Larissa Campos.</span>", "t75": "Strength training has been part of my life for <b>20 years</b>, and for almost <b>10 years</b> I've used it to transform other people's lives. I've coached <b>more than a thousand clients</b>: busy people, people who hated the gym, people who had given up on themselves.", "t76": "What they all taught me is simple: <b>you can't change your body without changing your relationship with training.</b> I've lived it myself, including on the bodybuilding stage. That's why I combine exercise science with listening and care, and why I built my own platform, so no client is ever on their own between workouts.", "t77": "FAQ", "t78": "Still have <span class=\"red\">questions?</span>", "t79": "If your question isn't here, message me on WhatsApp. I answer personally.", "t80": "Talk to Larissa", "t81": "I'm a total beginner. Can I start?", "t82": "Absolutely, and you should! Beginners benefit the most from one-on-one coaching. We start with the basics: technique, mobility and confidence. Intensity goes up at your pace, with no rush and no risk.", "t83": "Do we talk before online coaching starts?", "t84": "Yes. Every online client starts with a 30-minute video call with me. That's where I learn about your goals, routine, limitations and what hasn't worked before, so I can build a plan that actually works for you.", "t85": "How fast do you reply in online coaching?", "t86": "I reply on WhatsApp on weekdays, usually the same day (within 24h). You can send me videos of your exercises and I'll correct your technique remotely.", "t87": "How does plan renewal work?", "t88": "Plans run for 3 or 6 months. Before the end, we review your progress together and set new goals. You decide whether to renew, with no surprise auto-renewals.", "t89": "I'm short on time. How many days a week do I need to train?", "t90": "I build your plan around the time you actually have. With 2 to 3 well-structured sessions a week, you can lose fat, get stronger and feel more energized. Consistency beats volume.", "t91": "Do I need a gym for online coaching?", "t92": "Not necessarily. I build your program around what you have: a full gym, your building's gym or a home setup with minimal equipment.", "t93": "I have pain or an injury. Can I train?", "t94": "In most cases, yes, and well-guided training often helps. The health intake flags these issues and, when needed, I follow the guidance of your doctor or physical therapist.", "t95": "Real reviews", "t96": "My clients <span class=\"red\">say it best.</span>", "t97": "What my clients wrote, unprompted, on my Google Business Profile.", "t98": "Personal trainer · South Zone, Rio de Janeiro", "t99": "See my Google profile", "t100": "The best version of you<br>won't wait until Monday.", "t101": "Choose the format that fits your life today. The first step is a conversation. We'll build the rest together.", "t102": "Apply for in-person training", "t103": "Start online coaching", "t104": "Application · <span class=\"red\">In-Person Training</span>", "t105": "I work with a limited number of clients to keep quality high. Answer a few quick questions and I'll get back to you personally on WhatsApp.", "t106": "Your name", "t107": "Your main goal", "t108": "Lose weight", "t109": "Build muscle", "t110": "Health &amp; energy", "t111": "Get back into training", "t112": "Neighborhood (South Zone)", "t113": "Best time of day", "t114": "Have you trained before?", "t115": "Send application via WhatsApp", "t116": "Apply for in-person", "t117": "Larissa de Campos · Sports Coaching"};
+var TXT = {
+  pt: { wa: "Oi, Larissa! Vi seu site e quero saber mais.",
+        waDuvida: "Oi, Larissa! Tenho uma dúvida antes de começar.",
+        checkout: "Oi, Larissa! Vi seu site e quero contratar a Consultoria Online. Podemos agendar a videochamada e ver as formas de pagamento?",
+        marquee: ["Emagrecimento com saúde","Força para a vida real","Treino que cabe na sua rotina","Constância, não perfeição","Atendimento humanizado","Resultado que se mantém"],
+        gTotal: " no Google", gTotalVazio: "avaliações no Google", traduzido: "",
+        hora: ["Manhã cedo (6h às 9h)","Manhã (9h às 12h)","Tarde","Noite"], exp: ["Nunca treinei","Já treinei, mas parei","Treino atualmente"],
+        phNome: "Como posso te chamar?", phBairro: "Ex.: Botafogo, Copacabana, Laranjeiras…",
+        form: ["Oi, Larissa! Quero aplicar para o Personal Presencial.","Nome","Objetivo","Bairro","Melhor período","Experiência"],
+        title: "Larissa Campos · Personal Trainer", waAria: "Falar no WhatsApp" },
+  en: { wa: "Hi Larissa! I saw your website and I'd like to know more.",
+        waDuvida: "Hi Larissa! I have a question before getting started.",
+        checkout: "Hi Larissa! I saw your website and I'd like to sign up for Online Coaching. Can we schedule the video call and go over payment options?",
+        marquee: ["Healthy weight loss","Strength for real life","Training that fits your schedule","Consistency over perfection","Coaching with a human touch","Results that stick"],
+        gTotal: " on Google", gTotalVazio: "Google reviews", traduzido: "Translated from Portuguese",
+        hora: ["Early morning (6 to 9 am)","Morning (9 am to noon)","Afternoon","Evening"], exp: ["Never","Yes, but I stopped","I currently train"],
+        phNome: "What should I call you?", phBairro: "e.g. Botafogo, Copacabana, Ipanema…",
+        form: ["Hi Larissa! I'd like to apply for in-person training.","Name","Goal","Neighborhood","Best time","Experience"],
+        title: "Larissa Campos · Personal Trainer in Rio", waAria: "Chat on WhatsApp" }
+};
+var PT = {};
+document.querySelectorAll("[data-t]").forEach(function(el){ PT[el.dataset.t] = el.innerHTML; });
+var LANG = "pt";
+
+function detectLang(){
+  try { var q = new URLSearchParams(location.search).get("lang"); if (q === "en" || q === "pt") return q; } catch(e){}
+  try { var sv = localStorage.getItem("lc_lang"); if (sv === "en" || sv === "pt") return sv; } catch(e){}
+  var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "pt"];
+  return /^pt/i.test(ls[0] || "pt") ? "pt" : "en";
+}
 
 // Google
 var G = CONFIG.google;
 document.getElementById("gNome").textContent = G.nome;
 document.getElementById("gNota").textContent = G.nota;
-document.getElementById("gTotal").textContent = G.total ? G.total + " no Google" : "avaliações no Google";
 var gl = document.getElementById("gLink");
 if (G.link) gl.href = G.link; else gl.style.display = "none";
 
 var gIcon = '<svg class="gmini" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>';
 var esc = function(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); };
-var box = document.getElementById("reviews");
-var lista = CONFIG.avaliacoes.length ? CONFIG.avaliacoes : [1,2,3,4,5,6].map(function(){
-  return { nome:"Aluno(a)", quando:"Google", texto:"Espaço para uma avaliação real do Google. Edite a lista \"avaliacoes\" no final do arquivo.", ph:true };
-});
-box.innerHTML = lista.map(function(r){
-  return '<div class="review reveal' + (r.ph ? ' placeholder' : '') + '"><div class="rv-top"><div class="avatar">' + esc(r.nome.charAt(0)) +
-    '</div><div><b>' + esc(r.nome) + '</b><span>' + esc(r.quando || "") + '</span></div>' + gIcon +
-    '</div><span class="stars">★★★★★</span><p>' + esc(r.texto) + '</p></div>';
-}).join("");
+function renderReviews(){
+  var t = TXT[LANG];
+  document.getElementById("reviews").innerHTML = CONFIG.avaliacoes.map(function(r){
+    var en = LANG === "en" && r.texto_en;
+    var nome = (LANG === "en" && r.nome_en) || r.nome;
+    return '<div class="review reveal in"><div class="rv-top"><div class="avatar">' + esc(nome.charAt(0)) +
+      '</div><div><b>' + esc(nome) + '</b><span>' + (LANG === "en" ? "Google review" : esc(r.quando || "")) + '</span></div>' + gIcon +
+      '</div><span class="stars">★★★★★</span><p>' + esc(en ? r.texto_en : r.texto) + (en ? '<em class="tr">' + t.traduzido + '</em>' : '') + '</p></div>';
+  }).join("");
+}
 
-// Rio Fit Experience: PT / EN
-var rio = document.getElementById("rio");
-if (rio) rio.querySelectorAll(".rio-lang button").forEach(function(b){
-  b.addEventListener("click", function(){
-    rio.setAttribute("data-lang", b.dataset.lang);
-    rio.querySelectorAll(".rio-lang button").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+function setLang(l, salvar){
+  LANG = l; var t = TXT[l];
+  document.documentElement.lang = l === "en" ? "en" : "pt-BR";
+  document.title = t.title;
+  document.querySelectorAll("[data-t]").forEach(function(el){ el.innerHTML = l === "en" ? EN[el.dataset.t] : PT[el.dataset.t]; });
+  document.querySelectorAll("[data-setlang]").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.setlang === l ? "true" : "false"); });
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    var v = a.getAttribute("data-wa");
+    var m = v === "duvida" ? t.waDuvida : (v === "geral" ? t.wa : v);
+    a.href = waLink(m); a.target = "_blank"; a.rel = "noopener";
   });
-});
+  document.querySelectorAll("[data-checkout]").forEach(function(a){ a.href = waLink(t.checkout); a.target = "_blank"; a.rel = "noopener"; });
+  document.getElementById("mqTrack").innerHTML = t.marquee.concat(t.marquee).map(function(x){ return "<span>" + x + "</span>"; }).join("");
+  document.getElementById("gTotal").textContent = G.total ? G.total + t.gTotal : t.gTotalVazio;
+  var nota = l === "en" ? G.nota.replace(",", ".") : G.nota;
+  document.getElementById("gNota").textContent = nota;
+  document.getElementById("statNota").textContent = nota;
+  document.getElementById("statMil").textContent = l === "en" ? "1,000" : "1.000";
+  [["fHora", t.hora], ["fExp", t.exp]].forEach(function(p){ [].forEach.call(document.getElementById(p[0]).options, function(o, i){ o.textContent = p[1][i]; }); });
+  document.getElementById("fNome").placeholder = t.phNome;
+  document.getElementById("fBairro").placeholder = t.phBairro;
+  document.querySelector(".wa-float").setAttribute("aria-label", t.waAria);
+  document.getElementById("heroImg").alt = l === "en" ? "Larissa Campos, personal trainer, arms crossed" : "Larissa Campos, personal trainer, de braços cruzados";
+  renderReviews();
+  if (salvar) { try { localStorage.setItem("lc_lang", l); } catch(e){} }
+}
+document.querySelectorAll("[data-setlang]").forEach(function(b){ b.addEventListener("click", function(){ setLang(b.dataset.setlang, true); }); });
+setLang(detectLang(), false);
 
 // Nav
 var nav = document.getElementById("nav");
@@ -651,13 +707,15 @@ modal.addEventListener("click", function(e){ if (e.target === modal || e.target.
 addEventListener("keydown", function(e){ if (e.key === "Escape") modal.classList.remove("open"); });
 document.getElementById("applyForm").addEventListener("submit", function(e){
   e.preventDefault();
-  var obj = (document.querySelector("input[name=obj]:checked") || {}).value || "-";
-  var msg = "Oi, Larissa! Quero aplicar para o Personal Presencial.\n\n" +
-    "Nome: " + document.getElementById("fNome").value + "\n" +
-    "Objetivo: " + obj + "\n" +
-    "Bairro: " + document.getElementById("fBairro").value + "\n" +
-    "Melhor período: " + document.getElementById("fHora").value + "\n" +
-    "Experiência: " + document.getElementById("fExp").value;
+  var chk = document.querySelector("input[name=obj]:checked");
+  var obj = chk ? chk.parentNode.querySelector("span").textContent : "-";
+  var f = TXT[LANG].form;
+  var msg = f[0] + "\n\n" +
+    f[1] + ": " + document.getElementById("fNome").value + "\n" +
+    f[2] + ": " + obj + "\n" +
+    f[3] + ": " + document.getElementById("fBairro").value + "\n" +
+    f[4] + ": " + document.getElementById("fHora").value + "\n" +
+    f[5] + ": " + document.getElementById("fExp").value;
   window.open(waLink(msg), "_blank");
   modal.classList.remove("open");
 });
