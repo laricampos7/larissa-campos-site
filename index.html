@@ -157,6 +157,26 @@ footer .flogo{height:54px;width:auto;margin-bottom:6px}
 .app-mock{position:absolute;right:-30px;top:-30px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(255,25,64,.35),transparent 70%)}
 @media(max-width:860px){.path-grid{grid-template-columns:1fr}.path{padding:28px}.path h3{font-size:1.9rem}}
 
+/* RIO FIT EXPERIENCE */
+.rio{margin-top:24px;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(120deg,#1a0409 0%,#3a0714 55%,#FF1940 140%);border:1px solid rgba(255,25,64,.35);display:grid;grid-template-columns:1.2fr .8fr;gap:30px;padding:40px}
+.rio .skyline{position:absolute;right:0;bottom:0;width:62%;max-width:560px;opacity:.22;pointer-events:none}
+.rio > div{position:relative;z-index:1}
+.rio .tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:7px 12px;border-radius:999px;background:#fff;color:#0b0b0e;margin-bottom:16px}
+.rio h3{font-family:Anton,sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(2rem,4vw,2.8rem);line-height:1.02;margin-bottom:12px}
+.rio-sub{font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.85rem;color:#fff;margin:-4px 0 14px}
+.rio .for{color:#ffd6de;margin-bottom:20px;max-width:520px}
+.rio ul{list-style:none;display:grid;gap:10px}
+.rio li{position:relative;padding-left:30px;font-size:.95rem}
+.rio li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF1940' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.rio-side{display:flex;flex-direction:column;justify-content:flex-end;gap:14px}
+.rio-num{font-family:Anton,sans-serif;font-size:5.5rem;line-height:.9;color:#fff}
+.rio-num small{display:block;font-size:1.1rem;letter-spacing:2px;color:#ffd6de}
+.rio-spots{display:flex;flex-wrap:wrap;gap:8px}
+.rio-spots span{font-size:.75rem;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid #ffffff55;color:#fff}
+.rio .btn{width:100%}
+.rio .mini{font-size:.78rem;opacity:.75;text-align:center}
+@media(max-width:860px){.rio{grid-template-columns:1fr;padding:28px}.rio .skyline{width:100%}.rio-num{font-size:4.2rem}}
+
 /* GOOGLE */
 .google{background:var(--bg)}
 .g-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;background:#fff;color:#0b0b0e;border-radius:24px;padding:28px 32px;margin:44px 0 26px}
@@ -389,6 +409,29 @@ footer a:hover{color:#fff}
         <p class="mini">Planos de 3 ou 6 meses · Você fecha direto comigo no WhatsApp</p>
       </article>
     </div>
+
+    <!-- PACOTE TURISTA -->
+    <article class="rio reveal" id="rio">
+      <svg class="skyline" viewBox="0 0 600 200" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path fill="#fff" d="M0 200V170c30-6 55-30 80-28 20 2 30 18 50 16 28-3 40-60 70-62 25-2 30 40 55 42 18 1 24-14 40-14 20 0 26 30 48 30 16 0 22-22 38-60 14-34 28-72 52-74 26-2 36 56 48 92 8 24 20 40 44 42 30 3 50-20 75-18v114z"/></svg>
+      <div>
+        <span class="tag">Novo · Para quem visita o Rio</span>
+        <h3>Rio Fit Experience</h3>
+        <p class="rio-sub">Pacote de aulas para turistas</p>
+        <p class="for">Vai passar uns dias no Rio e não quer perder o ritmo? Treine comigo durante a viagem e volte para casa mais forte, com energia de sobra e um plano para continuar.</p>
+        <ul>
+          <li><b>10 aulas presenciais</b> para usar durante a sua estadia</li>
+          <li>Treinos ao ar livre nos cartões-postais da Zona Sul ou na academia</li>
+          <li>Horários flexíveis, encaixados no seu roteiro de passeios</li>
+          <li>Avaliação no primeiro dia e plano para seguir treinando quando voltar</li>
+        </ul>
+      </div>
+      <div class="rio-side">
+        <div class="rio-num">10<small>aulas no Rio</small></div>
+        <div class="rio-spots"><span>Aterro do Flamengo</span><span>Arpoador</span><span>Lagoa</span><span>Urca</span></div>
+        <a class="btn btn-white" href="#" data-wa="Oi, Larissa! Vou visitar o Rio e quero o pacote Rio Fit Experience (10 aulas). Chego no dia __/__ e fico até __/__. Vou me hospedar no bairro: ">Garantir meu pacote</a>
+        <p class="mini">Me conte suas datas no WhatsApp e eu monto sua agenda</p>
+      </div>
+    </article>
   </div>
 </section>
 
