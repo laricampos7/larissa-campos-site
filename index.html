@@ -169,13 +169,18 @@ footer .flogo{height:54px;width:auto;margin-bottom:6px}
 .rio li{position:relative;padding-left:30px;font-size:.95rem}
 .rio li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF1940' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
 .rio-side{display:flex;flex-direction:column;justify-content:flex-end;gap:14px}
+.rio[data-lang="pt"] [lang="en"],.rio[data-lang="en"] [lang="pt"]{display:none}
+.rio > .rio-lang{position:absolute;top:18px;right:18px;z-index:3;display:flex;background:rgba(0,0,0,.35);border:1px solid #ffffff40;border-radius:999px;padding:3px}
+.rio-lang button{background:none;border:0;color:#fff;font:800 .75rem Inter,sans-serif;letter-spacing:1px;padding:7px 12px;border-radius:999px;cursor:pointer}
+.rio-lang button[aria-pressed="true"]{background:#fff;color:#0b0b0e}
+.rio-num em{font-style:normal;font-size:1.6rem;color:#ffd6de;margin:0 10px;vertical-align:middle;letter-spacing:1px}
 .rio-num{font-family:Anton,sans-serif;font-size:5.5rem;line-height:.9;color:#fff}
 .rio-num small{display:block;font-size:1.1rem;letter-spacing:2px;color:#ffd6de}
 .rio-spots{display:flex;flex-wrap:wrap;gap:8px}
 .rio-spots span{font-size:.75rem;font-weight:700;padding:6px 11px;border-radius:999px;border:1px solid #ffffff55;color:#fff}
 .rio .btn{width:100%}
 .rio .mini{font-size:.78rem;opacity:.75;text-align:center}
-@media(max-width:860px){.rio{grid-template-columns:1fr;padding:28px}.rio .skyline{width:100%}.rio-num{font-size:4.2rem}}
+@media(max-width:860px){.rio{grid-template-columns:1fr;padding:64px 28px 28px}.rio > .rio-lang{top:16px;left:28px;right:auto}.rio .skyline{width:100%}.rio-num{font-size:4.2rem}}
 
 /* GOOGLE */
 .google{background:var(--bg)}
@@ -411,25 +416,29 @@ footer a:hover{color:#fff}
     </div>
 
     <!-- PACOTE TURISTA -->
-    <article class="rio reveal" id="rio">
+    <article class="rio reveal" id="rio" data-lang="pt">
       <svg class="skyline" viewBox="0 0 600 200" preserveAspectRatio="xMaxYMax meet" aria-hidden="true"><path fill="#fff" d="M0 200V170c30-6 55-30 80-28 20 2 30 18 50 16 28-3 40-60 70-62 25-2 30 40 55 42 18 1 24-14 40-14 20 0 26 30 48 30 16 0 22-22 38-60 14-34 28-72 52-74 26-2 36 56 48 92 8 24 20 40 44 42 30 3 50-20 75-18v114z"/></svg>
+      <div class="rio-lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
       <div>
-        <span class="tag">Novo · Para quem visita o Rio</span>
+        <span class="tag"><span lang="pt">Novo · Para quem visita o Rio</span><span lang="en">New · For Rio visitors</span></span>
         <h3>Rio Fit Experience</h3>
-        <p class="rio-sub">Pacote de aulas para turistas</p>
-        <p class="for">Vai passar uns dias no Rio e não quer perder o ritmo? Treine comigo durante a viagem e volte para casa mais forte, com energia de sobra e um plano para continuar.</p>
+        <p class="rio-sub"><span lang="pt">Pacote de aulas para turistas</span><span lang="en">Personal training packages for travelers</span></p>
+        <p class="for"><span lang="pt">Vai passar uns dias no Rio e não quer perder o ritmo? Treine comigo durante a viagem e volte para casa mais forte, com energia de sobra e um plano para continuar.</span><span lang="en">Spending a few days in Rio and don't want to lose your rhythm? Train with me during your trip and go home stronger, full of energy and with a plan to keep going.</span></p>
         <ul>
-          <li><b>10 aulas presenciais</b> para usar durante a sua estadia</li>
-          <li>Treinos ao ar livre nos cartões-postais da Zona Sul ou na academia</li>
-          <li>Horários flexíveis, encaixados no seu roteiro de passeios</li>
-          <li>Avaliação no primeiro dia e plano para seguir treinando quando voltar</li>
+          <li><span lang="pt">Pacotes de <b>5 ou 10 aulas</b> para usar durante a sua estadia</span><span lang="en"><b>5 or 10 session</b> packages to use during your stay</span></li>
+          <li><span lang="pt">Experiência ao ar livre nos melhores pontos da cidade, inclusive na <b>Praia de Copacabana</b></span><span lang="en">Outdoor experience at the city's best spots, including <b>Copacabana Beach</b></span></li>
+          <li><span lang="pt">Horários flexíveis, encaixados no seu roteiro de passeios</span><span lang="en">Flexible schedule that fits your sightseeing plans</span></li>
+          <li><span lang="pt">Avaliação no primeiro dia e plano para seguir treinando quando voltar</span><span lang="en">Assessment on day one and a plan to keep training back home</span></li>
         </ul>
       </div>
       <div class="rio-side">
-        <div class="rio-num">10<small>aulas no Rio</small></div>
-        <div class="rio-spots"><span>Aterro do Flamengo</span><span>Arpoador</span><span>Lagoa</span><span>Urca</span></div>
-        <a class="btn btn-white" href="#" data-wa="Oi, Larissa! Vou visitar o Rio e quero o pacote Rio Fit Experience (10 aulas). Chego no dia __/__ e fico até __/__. Vou me hospedar no bairro: ">Garantir meu pacote</a>
-        <p class="mini">Me conte suas datas no WhatsApp e eu monto sua agenda</p>
+        <div class="rio-num">5<em><span lang="pt">ou</span><span lang="en">or</span></em>10<small><span lang="pt">aulas no Rio</span><span lang="en">sessions in Rio</span></small></div>
+        <div class="rio-spots"><span><span lang="pt">Praia de Copacabana</span><span lang="en">Copacabana Beach</span></span><span>Arpoador</span><span><span lang="pt">Aterro do Flamengo</span><span lang="en">Flamengo Park</span></span><span><span lang="pt">Lagoa</span><span lang="en">Lagoa Lagoon</span></span></div>
+        <a class="btn btn-white" lang="pt" href="#" data-wa="Oi, Larissa! Vou visitar o Rio e quero o pacote Rio Fit Experience de __ aulas (5 ou 10). Chego no dia __/__ e fico até __/__. Vou me hospedar no bairro: ">Garantir meu pacote</a>
+        <a class="btn btn-white" lang="en" href="#" data-wa="Hi Larissa! I'm visiting Rio and I'd like the Rio Fit Experience package with __ sessions (5 or 10). I arrive on __/__ and leave on __/__. I'm staying in: ">Book my package</a>
+        <p class="mini"><span lang="pt">Me conte suas datas no WhatsApp e eu monto sua agenda</span><span lang="en">Send me your dates on WhatsApp and I'll set up your schedule</span></p>
       </div>
     </article>
   </div>
@@ -621,6 +630,15 @@ box.innerHTML = lista.map(function(r){
     '</div><div><b>' + esc(r.nome) + '</b><span>' + esc(r.quando || "") + '</span></div>' + gIcon +
     '</div><span class="stars">★★★★★</span><p>' + esc(r.texto) + '</p></div>';
 }).join("");
+
+// Rio Fit Experience: PT / EN
+var rio = document.getElementById("rio");
+if (rio) rio.querySelectorAll(".rio-lang button").forEach(function(b){
+  b.addEventListener("click", function(){
+    rio.setAttribute("data-lang", b.dataset.lang);
+    rio.querySelectorAll(".rio-lang button").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+  });
+});
 
 // Nav
 var nav = document.getElementById("nav");
