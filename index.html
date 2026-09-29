@@ -383,7 +383,7 @@ footer a:hover{color:#fff}
         </ul>
         <div class="scarcity"><span class="dot"></span>Início em até 72h após a videochamada</div>
         <a class="btn btn-red" href="#" data-checkout>Quero minha consultoria</a>
-        <p class="mini">Planos de 3 ou 6 meses · Pagamento seguro</p>
+        <p class="mini">Planos de 3 ou 6 meses · Você fecha direto comigo no WhatsApp</p>
       </article>
     </div>
   </div>
@@ -523,11 +523,8 @@ footer a:hover{color:#fff}
    ✏️  CONFIGURAÇÃO: edite só este bloco
    ========================================================= */
 var CONFIG = {
-  whatsapp: "5521994574488",
+  whatsapp: "5521994574488",   // WhatsApp profissional: todos os botões (inclusive pagamento da consultoria) vão para ele
 
-  // Link do checkout da Consultoria Online (Hotmart, Kiwify, Mercado Pago, InfinitePay…).
-  // Enquanto estiver vazio, o botão abre o WhatsApp com mensagem pronta.
-  checkoutOnline: "",
 
   // Perfil da empresa no Google
   google: {
@@ -556,7 +553,7 @@ document.querySelectorAll("[data-wa]").forEach(function(a){
   a.href = waLink(a.getAttribute("data-wa")); a.target = "_blank"; a.rel = "noopener";
 });
 document.querySelectorAll("[data-checkout]").forEach(function(a){
-  a.href = CONFIG.checkoutOnline || waLink("Oi, Larissa! Quero começar a Consultoria Online. Como faço o pagamento?");
+  a.href = waLink("Oi, Larissa! Vi seu site e quero contratar a Consultoria Online. Podemos agendar a videochamada e ver as formas de pagamento?");
   a.target = "_blank"; a.rel = "noopener";
 });
 
