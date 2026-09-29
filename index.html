@@ -93,7 +93,11 @@ footer .flogo{height:54px;width:auto;margin-bottom:6px}
 .stat span{font-size:.8rem;color:var(--mut)}
 @media(max-width:960px){
   .hero-grid{grid-template-columns:1fr}
-  .hero-photo{max-width:430px;margin:10px auto 0;width:100%}
+  .hero-photo{max-width:430px;margin:0 auto;width:100%;order:-1}
+  .hero-grid{gap:30px}
+  .hero{padding-top:92px}
+  .hero-photo .frame{aspect-ratio:4/4.3}
+  .hero-photo::before{inset:-10px 10px 10px -10px}
   .stats{grid-template-columns:repeat(2,1fr)}
 }
 
