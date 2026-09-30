@@ -194,6 +194,31 @@ html[lang="en"] #caminhos .path-grid{margin-top:24px}
 html[lang="en"] .hero h1{font-size:clamp(2.3rem,5.2vw,4.3rem)}
 .review .tr{display:block;margin-top:10px;font-size:.72rem;color:var(--mut);font-style:normal;letter-spacing:.3px}
 
+/* faixa de números mais compacta */
+.stats{margin-top:40px}
+.stat{padding:16px 10px}
+.stat b{font-size:1.7rem}
+.stat > span{font-size:.74rem;line-height:1.3;display:block}
+@media(max-width:960px){.stats{grid-template-columns:repeat(4,1fr)!important}}
+@media(max-width:560px){.stat{padding:12px 4px}.stat b{font-size:1.3rem}.stat > span{font-size:.64rem}}
+/* cartões "para quem é" com número */
+.pain .x{font-family:Anton,sans-serif;font-weight:400;font-size:1rem}
+/* ordem das cores de fundo */
+.about{background:var(--bg-2)}
+.method{background:var(--bg)}
+.method .step{background:var(--bg-2)}
+.steps{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+/* plataforma BURN 2.0 */
+.platform{background:var(--bg)}
+.platform-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.plat-list{list-style:none;display:grid;gap:14px;margin-top:26px}
+.plat-list li{position:relative;padding-left:32px;font-size:1rem}
+.plat-list li::before{content:"";position:absolute;left:0;top:3px;width:20px;height:20px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.platform-img{display:flex;justify-content:center}
+.platform-img img{width:100%;max-width:360px;height:auto}
+@media(max-width:860px){.platform-grid{grid-template-columns:1fr;gap:36px}.platform-img img{max-width:300px}}
+
 /* GOOGLE */
 .google{background:var(--bg)}
 .g-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;background:#fff;color:#0b0b0e;border-radius:24px;padding:28px 32px;margin:44px 0 26px}
@@ -294,7 +319,8 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <a href="#topo" class="brand"><img src="img/logo.png" alt="Larissa de Campos Personal Trainer"></a>
     <div class="nav-links">
-      <a href="#diferencial"><span data-t="t0">Diferencial</span></a>
+      <a href="#diferencial"><span data-t="n36">Para quem é</span></a>
+      <a href="#sobre"><span data-t="n37">Sobre mim</span></a>
       <a href="#caminhos"><span data-t="t1">Planos</span></a>
       <a href="#metodo"><span data-t="t2">Método</span></a>
       <a href="#faq"><span data-t="t3">Dúvidas</span></a>
@@ -343,42 +369,76 @@ footer a:hover{color:#fff}
 
 <div class="marquee" aria-hidden="true"><div class="track" id="mqTrack"></div></div>
 
-<!-- 2. O GRANDE PROBLEMA -->
+<!-- 2. PARA QUEM É -->
 <section class="problem" id="diferencial">
   <div class="wrap">
-    <span class="eyebrow reveal"><span data-t="t15">O grande problema</span></span>
-    <h2 class="display reveal"><span data-t="t16">Você não falhou.<br><span class="red">O método é que falhou com você.</span></span></h2>
-    <p class="lead reveal"><span data-t="t17">Se você já pagou academia e parou no segundo mês, já baixou planilha pronta da internet, já teve personal que só contava repetição olhando o celular… a culpa nunca foi sua falta de força de vontade.</span></p>
+    <span class="eyebrow reveal"><span data-t="n1">Para quem é</span></span>
+    <h2 class="display reveal"><span data-t="n2">Treino para quem quer evoluir.<br><span class="red">Em qualquer fase.</span></span></h2>
+    <p class="lead reveal"><span data-t="n3">Seja para começar do zero, voltar depois de uma pausa ou sair da estagnação: o seu treino precisa ser feito para você, para a sua rotina e para o seu objetivo.</span></p>
 
     <div class="pain-grid">
-      <div class="pain reveal"><div class="x">!</div><h3><span data-t="t18">"Odeio academia"</span></h3><p><span data-t="t19">Ambiente frio, você se sente perdido(a), ninguém te explica o porquê de nada. Normal não querer voltar.</span></p></div>
-      <div class="pain reveal"><div class="x">!</div><h3><span data-t="t20">"Já tentei de tudo"</span></h3><p><span data-t="t21">Dieta da moda, treino do influencer, app genérico. Funciona 3 semanas, depois a vida acontece e tudo desaba.</span></p></div>
-      <div class="pain reveal"><div class="x">!</div><h3><span data-t="t22">"Não tenho tempo"</span></h3><p><span data-t="t23">Trabalho, filhos, reuniões. Um treino que ignora sua rotina real está condenado desde o primeiro dia.</span></p></div>
+      <div class="pain reveal"><div class="x">01</div><h3><span data-t="n4">Quer começar</span></h3><p><span data-t="n5">Nunca treinou ou não se sente à vontade na academia? A gente começa pela base, no seu ritmo e com segurança.</span></p></div>
+      <div class="pain reveal"><div class="x">02</div><h3><span data-t="n6">Quer voltar</span></h3><p><span data-t="n7">Parou por falta de tempo, lesão ou motivação? Retomamos com um plano realista, que cabe na sua vida.</span></p></div>
+      <div class="pain reveal"><div class="x">03</div><h3><span data-t="n8">Quer evoluir</span></h3><p><span data-t="n9">Já treina, mas estagnou? Ajusto estímulo, técnica e estratégia para você voltar a ter resultado.</span></p></div>
     </div>
 
     <div class="versus reveal">
       <div class="vs-them">
-        <h3><span data-t="t24">O personal "padrão"</span></h3>
+        <h3><span data-t="n10">Aqui você não vai encontrar</span></h3>
         <ul>
-          <li><span data-t="t25">Entrega uma planilha e some</span></li>
-          <li><span data-t="t26">O mesmo treino para todo mundo</span></li>
-          <li><span data-t="t27">Conta repetição olhando o celular</span></li>
-          <li><span data-t="t28">Você depende dele(a) para sempre</span></li>
+          <li><span data-t="n11">Planilha pronta</span></li>
+          <li><span data-t="n12">Treino igual para todo mundo</span></li>
+          <li><span data-t="n13">Acompanhamento só no papel</span></li>
         </ul>
       </div>
       <div class="vs-me">
-        <h3 class="red"><span data-t="t29">Comigo é diferente</span></h3>
+        <h3 class="red"><span data-t="n14">O meu acompanhamento</span></h3>
         <ul>
-          <li><span data-t="t30">Te escuto antes de te treinar: rotina, história, dores e medos</span></li>
-          <li><span data-t="t31">Treino construído para o <b>seu</b> corpo e o <b>seu</b> objetivo</span></li>
-          <li><span data-t="t32">Presença total: técnica, ajuste e incentivo em cada série</span></li>
-          <li><span data-t="t33">Te ensino a entender o treino. Você ganha autonomia e confiança</span></li>
+          <li><span data-t="n15"><b>Abordagem inicial completa:</b> a parte mais importante do processo. Escuto sua rotina, sua história e seu objetivo</span></li>
+          <li><span data-t="n16">Treino 100% individual, pensado para o <b>seu</b> corpo</span></li>
+          <li><span data-t="n17">Acompanhamento de perto, com ajustes a cada etapa</span></li>
+          <li><span data-t="n18">Minha <b>plataforma própria</b> de acompanhamento, o BURN 2.0</span></li>
         </ul>
       </div>
     </div>
 
     <div class="turn reveal">
       <p><span data-t="t34">Eu não quero só acompanhar seu treino.<br><span class="red">Quero mudar a forma como você enxerga a atividade física.</span></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal">
+      <img src="img/larissa-palco.jpg" alt="Larissa Campos competindo em campeonato de fisiculturismo" loading="lazy">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow"><span data-t="t73">Quem vai cuidar de você</span></span>
+      <h2 class="display"><span data-t="t74">Prazer, <span class="red">Larissa Campos.</span></span></h2>
+      <p><span data-t="n19">Há <b>20 anos</b> a musculação faz parte da minha vida. Eu amo o esporte e tudo o que me desafia a ser melhor. E foi a disciplina que me ensinou a lição mais importante: <b>ninguém muda o corpo sem começar pela mente.</b></span></p>
+      <p><span data-t="n20">Muita gente acha que praticar esporte é coisa de atleta. Não é. <b>Movimento é vida!</b> E você pode, sim, chegar na sua melhor versão. Eu estou aqui para te acompanhar em cada etapa desse processo.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- PLATAFORMA BURN 2.0 -->
+<section class="platform" id="plataforma">
+  <div class="wrap platform-grid">
+    <div class="reveal">
+      <span class="eyebrow"><span data-t="n21">Plataforma própria</span></span>
+      <h2 class="display"><span data-t="n22">Seu treino no bolso com o <span class="red">BURN 2.0</span></span></h2>
+      <p class="lead"><span data-t="n23">Criei minha própria plataforma para que nenhum aluno fique sozinho entre um treino e outro. Tudo o que você precisa, na palma da mão:</span></p>
+      <ul class="plat-list">
+        <li><span data-t="n24">Vídeo de execução de cada exercício</span></li>
+        <li><span data-t="n25">Registro de cargas e repetições, série a série</span></li>
+        <li><span data-t="n26">Cronômetro de descanso e metas de evolução</span></li>
+        <li><span data-t="n27">Eu acompanho tudo e ajusto seu treino em tempo real</span></li>
+      </ul>
+    </div>
+    <div class="platform-img reveal">
+      <img src="img/burn-app.png" alt="Tela do aplicativo BURN 2.0 durante um treino" loading="lazy">
     </div>
   </div>
 </section>
@@ -457,29 +517,12 @@ footer a:hover{color:#fff}
 <section class="method" id="metodo">
   <div class="wrap">
     <span class="eyebrow reveal"><span data-t="t58">Como funciona o método</span></span>
-    <h2 class="display reveal"><span data-t="t59">Do primeiro "oi" ao <span class="red">seu plano na mão.</span></span></h2>
-    <p class="lead reveal"><span data-t="t60">Nada de treino pronto. Cada etapa existe para que o seu plano seja feito sob medida e para que você entenda o que está fazendo.</span></p>
-
+    <h2 class="display reveal"><span data-t="n28">Tudo começa <span class="red">por você.</span></span></h2>
+    <p class="lead reveal"><span data-t="n29">Sem planilha pronta. Sem treino igual para todo mundo. A abordagem inicial é a etapa mais importante do processo: é ela que garante um treino individual e um acompanhamento completo.</span></p>
     <div class="steps">
-      <div class="step reveal"><div class="num">01</div><h3><span data-t="t61">Conversa inicial</span></h3><p><span data-t="t62">Presencial ou por videochamada de 30 min (no online), você me conta sua rotina, objetivo e histórico. Eu te mostro o melhor caminho.</span></p><span class="when"><span data-t="t63">Dia 1</span></span></div>
-      <div class="step reveal"><div class="num">02</div><h3><span data-t="t64">Anamnese completa</span></h3><p><span data-t="t65">Saúde, lesões, sono, rotina e histórico com treino. É aqui que eu te conheço de verdade e defino seu ponto de partida.</span></p><span class="when"><span data-t="t66">Dia 1 a 3</span></span></div>
-      <div class="step reveal"><div class="num">03</div><h3><span data-t="t67">Plano sob medida</span></h3><p><span data-t="t68">Monto seu treino por ciclos, com metas claras para o trimestre. Presencial: nas aulas. Online: no seu app, com vídeos.</span></p><span class="when"><span data-t="t69">Até 72h</span></span></div>
-      <div class="step reveal"><div class="num">04</div><h3><span data-t="t70">Acompanhar e ajustar</span></h3><p><span data-t="t71">Eu vejo suas cargas e check-ins, ajusto o que precisa e reviso seu plano a cada ciclo. Resultado é processo, não sorte.</span></p><span class="when"><span data-t="t72">Sempre</span></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- SOBRE -->
-<section class="about" id="sobre">
-  <div class="wrap about-grid">
-    <div class="about-photo reveal">
-      <img src="img/larissa-palco.jpg" alt="Larissa Campos competindo em campeonato de fisiculturismo" loading="lazy">
-    </div>
-    <div class="reveal">
-      <span class="eyebrow"><span data-t="t73">Quem vai cuidar de você</span></span>
-      <h2 class="display"><span data-t="t74">Prazer, <span class="red">Larissa Campos.</span></span></h2>
-      <p><span data-t="t75">Faz <b>20 anos</b> que a musculação faz parte da minha vida e quase <b>10 anos</b> que eu uso isso para transformar a vida de outras pessoas. Já passaram pelas minhas mãos <b>mais de mil alunos</b>: gente ocupada, gente que odiava academia, gente que já tinha desistido de si.</span></p>
-      <p><span data-t="t76">O que eu aprendi com cada um deles é simples: <b>ninguém muda de corpo sem mudar de relação com o treino.</b> Vivi isso na pele, inclusive nos palcos do fisiculturismo. Por isso uno ciência do exercício com escuta e acolhimento, e criei minha própria plataforma para que nenhum aluno fique sozinho entre um treino e outro.</span></p>
+      <div class="step reveal"><div class="num">01</div><h3><span data-t="n30">Abordagem inicial</span></h3><p><span data-t="n31">Conversa e anamnese completa: rotina, saúde, histórico e objetivo. É daqui que nasce o seu treino.</span></p></div>
+      <div class="step reveal"><div class="num">02</div><h3><span data-t="n32">Treino sob medida</span></h3><p><span data-t="n33">Seu plano montado para você e entregue na minha plataforma, com vídeo de cada exercício.</span></p></div>
+      <div class="step reveal"><div class="num">03</div><h3><span data-t="n34">Acompanhamento completo</span></h3><p><span data-t="n35">Acompanho sua evolução de perto e ajusto o que for preciso, etapa por etapa.</span></p></div>
     </div>
   </div>
 </section>
@@ -615,7 +658,7 @@ var waLink = function(msg){ return "https://wa.me/" + CONFIG.whatsapp + "?text="
 /* ===== IDIOMA (PT / EN) =====
    Detecta o idioma do celular: português -> PT; qualquer outro -> EN.
    ?lang=en ou ?lang=pt no link força um idioma. A escolha no botão fica lembrada. */
-var EN = {"t0": "Why me", "t1": "Programs", "t2": "Method", "t3": "FAQ", "t4": "Reviews", "t5": "Get started", "t6": "Personal Trainer · In-Person &amp; Online", "t7": "Your body changes<br>when your mindset <span class=\"red\">changes with it.</span>", "t8": "Training with real care and real accountability. Exercise doesn't have to feel like a chore: let me show you how training can transform not just the way you look, but your whole quality of life. <b>In person in Rio de Janeiro's South Zone</b> or <b>online, through my own training platform</b>.", "t9": "Start online today", "t10": "Limited in-person spots · Online: start within 72h", "t11": "years of lifting", "t12": "years coaching", "t13": "people transformed", "t14": "Google rating", "t15": "The real problem", "t16": "You didn't fail.<br><span class=\"red\">The method failed you.</span>", "t17": "If you've paid for a gym and quit by month two, downloaded a cookie-cutter plan, or had a trainer who counted reps while scrolling their phone… it was never about willpower.", "t18": "\"I hate the gym\"", "t19": "It feels intimidating, you feel lost, and no one ever explains the why behind anything. No wonder you don't want to go back.", "t20": "\"I've tried everything\"", "t21": "Fad diets, influencer workouts, generic apps. It works for three weeks, then life happens and it all falls apart.", "t22": "\"I don't have time\"", "t23": "Work, kids, meetings. A program that ignores your real life is doomed from day one.", "t24": "The \"typical\" trainer", "t25": "Hands you a workout sheet and disappears", "t26": "Same workout for everyone", "t27": "Counts reps while checking their phone", "t28": "Keeps you dependent forever", "t29": "Working with me is different", "t30": "I listen before I train you: your routine, your history, what hurts and what holds you back", "t31": "A program built for <b>your</b> body and <b>your</b> goals", "t32": "Fully present: technique, adjustments and encouragement on every set", "t33": "I teach you to understand your training, so you gain independence and confidence", "t34": "I don't just want to coach your workouts.<br><span class=\"red\">I want to change the way you see exercise.</span>", "t35": "Choose your path", "t36": "Different formats.<br><span class=\"red\">Same commitment to you.</span>", "t37": "In person · Rio's South Zone", "t38": "In-Person Personal Training", "t39": "For those who want someone right beside them on every rep, and a coach who turns training into the best part of the day.", "t40": "100% personalized sessions with real-time technique coaching", "t41": "Warm, human-centered coaching, from day one to your best day", "t42": "Your program evolves every cycle as you progress", "t43": "Access to my app plus WhatsApp support between sessions", "t44": "Limited availability: I keep a small client list to protect quality", "t45": "Apply for a spot", "t46": "Takes one minute. I'll get back to you personally.", "t47": "Online · Anywhere", "t48": "Online Coaching", "t49": "For people with unpredictable schedules who want to train anywhere, anytime (gym, home or on the road) with professional guidance.", "t50": "A <b>30-min video call</b> with me, so I can understand your goals, routine and background", "t51": "A personalized program in <b>my own app</b>, with a video for every exercise", "t52": "You log your weights and check-ins; I track your progress and adjust in real time", "t53": "Goals, achievements and a consistency leaderboard to keep you motivated", "t54": "Direct support from me on WhatsApp", "t55": "Start within 72h of our video call", "t56": "Start my coaching", "t57": "3- or 6-month plans · Sign up directly with me on WhatsApp", "t58": "How the method works", "t59": "From the first \"hi\" to <span class=\"red\">your plan in hand.</span>", "t60": "No cookie-cutter programs. Every step exists so your plan is tailor-made and so you understand exactly what you're doing.", "t61": "Intro chat", "t62": "In person, or on a 30-min video call for online clients, you tell me about your routine, goals and history. I'll show you the best path.", "t63": "Day 1", "t64": "Full health intake", "t65": "Health, injuries, sleep, routine and training history. This is where I really get to know you and set your starting point.", "t66": "Days 1 to 3", "t67": "Tailor-made plan", "t68": "I build your program in cycles, with clear goals for each quarter. In person: during our sessions. Online: in your app, with videos.", "t69": "Within 72h", "t70": "Track and adjust", "t71": "I review your weights and check-ins, tweak what's needed and update your plan every cycle. Results are a process, not luck.", "t72": "Always", "t73": "Who will be coaching you", "t74": "Nice to meet you, <span class=\"red\">I'm Larissa Campos.</span>", "t75": "Strength training has been part of my life for <b>20 years</b>, and for almost <b>10 years</b> I've used it to transform other people's lives. I've coached <b>more than a thousand clients</b>: busy people, people who hated the gym, people who had given up on themselves.", "t76": "What they all taught me is simple: <b>you can't change your body without changing your relationship with training.</b> I've lived it myself, including on the bodybuilding stage. That's why I combine exercise science with listening and care, and why I built my own platform, so no client is ever on their own between workouts.", "t77": "FAQ", "t78": "Still have <span class=\"red\">questions?</span>", "t79": "If your question isn't here, message me on WhatsApp. I answer personally.", "t80": "Talk to Larissa", "t81": "I'm a total beginner. Can I start?", "t82": "Absolutely, and you should! Beginners benefit the most from one-on-one coaching. We start with the basics: technique, mobility and confidence. Intensity goes up at your pace, with no rush and no risk.", "t83": "Do we talk before online coaching starts?", "t84": "Yes. Every online client starts with a 30-minute video call with me. That's where I learn about your goals, routine, limitations and what hasn't worked before, so I can build a plan that actually works for you.", "t85": "How fast do you reply in online coaching?", "t86": "I reply on WhatsApp on weekdays, usually the same day (within 24h). You can send me videos of your exercises and I'll correct your technique remotely.", "t87": "How does plan renewal work?", "t88": "Plans run for 3 or 6 months. Before the end, we review your progress together and set new goals. You decide whether to renew, with no surprise auto-renewals.", "t89": "I'm short on time. How many days a week do I need to train?", "t90": "I build your plan around the time you actually have. With 2 to 3 well-structured sessions a week, you can lose fat, get stronger and feel more energized. Consistency beats volume.", "t91": "Do I need a gym for online coaching?", "t92": "Not necessarily. I build your program around what you have: a full gym, your building's gym or a home setup with minimal equipment.", "t93": "I have pain or an injury. Can I train?", "t94": "In most cases, yes, and well-guided training often helps. The health intake flags these issues and, when needed, I follow the guidance of your doctor or physical therapist.", "t95": "Real reviews", "t96": "My clients <span class=\"red\">say it best.</span>", "t97": "What clients who've trained with me say about my work.", "t98": "Personal trainer · South Zone, Rio de Janeiro", "t99": "See my Google profile", "t100": "The best version of you<br>won't wait until Monday.", "t101": "Choose the format that fits your life today. The first step is a conversation. We'll build the rest together.", "t102": "Apply for in-person training", "t103": "Start online coaching", "t104": "Application · <span class=\"red\">In-Person Training</span>", "t105": "I work with a limited number of clients to keep quality high. Answer a few quick questions and I'll get back to you personally on WhatsApp.", "t106": "Your name", "t107": "Your main goal", "t108": "Lose weight", "t109": "Build muscle", "t110": "Health &amp; energy", "t111": "Get back into training", "t112": "Neighborhood (South Zone)", "t113": "Best time of day", "t114": "Have you trained before?", "t115": "Send application via WhatsApp", "t116": "Apply for in-person", "t117": "Larissa de Campos · Sports Coaching"};
+var EN = {"t0": "Why me", "t1": "Programs", "t2": "Method", "t3": "FAQ", "t4": "Reviews", "t5": "Get started", "t6": "Personal Trainer · In-Person &amp; Online", "t7": "Your body changes<br>when your mindset <span class=\"red\">changes with it.</span>", "t8": "Training with real care and real accountability. Exercise doesn't have to feel like a chore: let me show you how training can transform not just the way you look, but your whole quality of life. <b>In person in Rio de Janeiro's South Zone</b> or <b>online, through my own training platform</b>.", "t9": "Start online today", "t10": "Limited in-person spots · Online: start within 72h", "t11": "years of lifting", "t12": "years coaching", "t13": "people transformed", "t14": "Google rating", "t15": "The real problem", "t16": "You didn't fail.<br><span class=\"red\">The method failed you.</span>", "t17": "If you've paid for a gym and quit by month two, downloaded a cookie-cutter plan, or had a trainer who counted reps while scrolling their phone… it was never about willpower.", "t18": "\"I hate the gym\"", "t19": "It feels intimidating, you feel lost, and no one ever explains the why behind anything. No wonder you don't want to go back.", "t20": "\"I've tried everything\"", "t21": "Fad diets, influencer workouts, generic apps. It works for three weeks, then life happens and it all falls apart.", "t22": "\"I don't have time\"", "t23": "Work, kids, meetings. A program that ignores your real life is doomed from day one.", "t24": "The \"typical\" trainer", "t25": "Hands you a workout sheet and disappears", "t26": "Same workout for everyone", "t27": "Counts reps while checking their phone", "t28": "Keeps you dependent forever", "t29": "Working with me is different", "t30": "I listen before I train you: your routine, your history, what hurts and what holds you back", "t31": "A program built for <b>your</b> body and <b>your</b> goals", "t32": "Fully present: technique, adjustments and encouragement on every set", "t33": "I teach you to understand your training, so you gain independence and confidence", "t34": "I don't just want to coach your workouts.<br><span class=\"red\">I want to change the way you see exercise.</span>", "t35": "Choose your path", "t36": "Different formats.<br><span class=\"red\">Same commitment to you.</span>", "t37": "In person · Rio's South Zone", "t38": "In-Person Personal Training", "t39": "For those who want someone right beside them on every rep, and a coach who turns training into the best part of the day.", "t40": "100% personalized sessions with real-time technique coaching", "t41": "Warm, human-centered coaching, from day one to your best day", "t42": "Your program evolves every cycle as you progress", "t43": "Access to my app plus WhatsApp support between sessions", "t44": "Limited availability: I keep a small client list to protect quality", "t45": "Apply for a spot", "t46": "Takes one minute. I'll get back to you personally.", "t47": "Online · Anywhere", "t48": "Online Coaching", "t49": "For people with unpredictable schedules who want to train anywhere, anytime (gym, home or on the road) with professional guidance.", "t50": "A <b>30-min video call</b> with me, so I can understand your goals, routine and background", "t51": "A personalized program in <b>my own app</b>, with a video for every exercise", "t52": "You log your weights and check-ins; I track your progress and adjust in real time", "t53": "Goals, achievements and a consistency leaderboard to keep you motivated", "t54": "Direct support from me on WhatsApp", "t55": "Start within 72h of our video call", "t56": "Start my coaching", "t57": "3- or 6-month plans · Sign up directly with me on WhatsApp", "t58": "How the method works", "t59": "From the first \"hi\" to <span class=\"red\">your plan in hand.</span>", "t60": "No cookie-cutter programs. Every step exists so your plan is tailor-made and so you understand exactly what you're doing.", "t61": "Intro chat", "t62": "In person, or on a 30-min video call for online clients, you tell me about your routine, goals and history. I'll show you the best path.", "t63": "Day 1", "t64": "Full health intake", "t65": "Health, injuries, sleep, routine and training history. This is where I really get to know you and set your starting point.", "t66": "Days 1 to 3", "t67": "Tailor-made plan", "t68": "I build your program in cycles, with clear goals for each quarter. In person: during our sessions. Online: in your app, with videos.", "t69": "Within 72h", "t70": "Track and adjust", "t71": "I review your weights and check-ins, tweak what's needed and update your plan every cycle. Results are a process, not luck.", "t72": "Always", "t73": "Who will be coaching you", "t74": "Nice to meet you, <span class=\"red\">I'm Larissa Campos.</span>", "t75": "Strength training has been part of my life for <b>20 years</b>, and for almost <b>10 years</b> I've used it to transform other people's lives. I've coached <b>more than a thousand clients</b>: busy people, people who hated the gym, people who had given up on themselves.", "t76": "What they all taught me is simple: <b>you can't change your body without changing your relationship with training.</b> I've lived it myself, including on the bodybuilding stage. That's why I combine exercise science with listening and care, and why I built my own platform, so no client is ever on their own between workouts.", "t77": "FAQ", "t78": "Still have <span class=\"red\">questions?</span>", "t79": "If your question isn't here, message me on WhatsApp. I answer personally.", "t80": "Talk to Larissa", "t81": "I'm a total beginner. Can I start?", "t82": "Absolutely, and you should! Beginners benefit the most from one-on-one coaching. We start with the basics: technique, mobility and confidence. Intensity goes up at your pace, with no rush and no risk.", "t83": "Do we talk before online coaching starts?", "t84": "Yes. Every online client starts with a 30-minute video call with me. That's where I learn about your goals, routine, limitations and what hasn't worked before, so I can build a plan that actually works for you.", "t85": "How fast do you reply in online coaching?", "t86": "I reply on WhatsApp on weekdays, usually the same day (within 24h). You can send me videos of your exercises and I'll correct your technique remotely.", "t87": "How does plan renewal work?", "t88": "Plans run for 3 or 6 months. Before the end, we review your progress together and set new goals. You decide whether to renew, with no surprise auto-renewals.", "t89": "I'm short on time. How many days a week do I need to train?", "t90": "I build your plan around the time you actually have. With 2 to 3 well-structured sessions a week, you can lose fat, get stronger and feel more energized. Consistency beats volume.", "t91": "Do I need a gym for online coaching?", "t92": "Not necessarily. I build your program around what you have: a full gym, your building's gym or a home setup with minimal equipment.", "t93": "I have pain or an injury. Can I train?", "t94": "In most cases, yes, and well-guided training often helps. The health intake flags these issues and, when needed, I follow the guidance of your doctor or physical therapist.", "t95": "Real reviews", "t96": "My clients <span class=\"red\">say it best.</span>", "t97": "What clients who've trained with me say about my work.", "t98": "Personal trainer · South Zone, Rio de Janeiro", "t99": "See my Google profile", "t100": "The best version of you<br>won't wait until Monday.", "t101": "Choose the format that fits your life today. The first step is a conversation. We'll build the rest together.", "t102": "Apply for in-person training", "t103": "Start online coaching", "t104": "Application · <span class=\"red\">In-Person Training</span>", "t105": "I work with a limited number of clients to keep quality high. Answer a few quick questions and I'll get back to you personally on WhatsApp.", "t106": "Your name", "t107": "Your main goal", "t108": "Lose weight", "t109": "Build muscle", "t110": "Health &amp; energy", "t111": "Get back into training", "t112": "Neighborhood (South Zone)", "t113": "Best time of day", "t114": "Have you trained before?", "t115": "Send application via WhatsApp", "t116": "Apply for in-person", "t117": "Larissa de Campos · Sports Coaching", "n1": "Who it's for", "n2": "Training for anyone ready to grow.<br><span class=\"red\">At any stage.</span>", "n3": "Whether you're starting from scratch, coming back after a break or stuck on a plateau, your training should be built for you, your schedule and your goals.", "n4": "Just starting out", "n5": "Never trained, or feel out of place at the gym? We start with the basics, at your pace and safely.", "n6": "Getting back into it", "n7": "Stopped because of time, an injury or motivation? We'll restart with a realistic plan that fits your life.", "n8": "Ready for the next level", "n9": "Already training but stuck? I fine-tune your program, technique and strategy so you start seeing results again.", "n10": "What you won't find here", "n11": "Cookie-cutter workout sheets", "n12": "The same workout for everyone", "n13": "Coaching that only exists on paper", "n14": "How I coach", "n15": "<b>A complete first consultation:</b> the most important part of the process. I learn about your routine, your history and your goals", "n16": "100% individual training, designed for <b>your</b> body", "n17": "Hands-on coaching, with adjustments at every stage", "n18": "My <b>own coaching platform</b>, BURN 2.0", "n19": "Strength training has been part of my life for <b>20 years</b>. I love the sport and everything that challenges me to be better. And discipline taught me the most important lesson of all: <b>no one changes their body without starting with their mind.</b>", "n20": "Many people think sport is only for athletes. It isn't. <b>Movement is life!</b> And yes, you can become the best version of yourself. I'm here to walk with you through every step of the journey.", "n21": "My own platform", "n22": "Your training in your pocket with <span class=\"red\">BURN 2.0</span>", "n23": "I built my own platform so no client is ever on their own between workouts. Everything you need, right in your hand:", "n24": "A how-to video for every exercise", "n25": "Log your weights and reps, set by set", "n26": "Rest timer and progress goals", "n27": "I follow everything and adjust your program in real time", "n28": "It all starts <span class=\"red\">with you.</span>", "n29": "No cookie-cutter plans. No one-size-fits-all workouts. The first consultation is the most important step of the process: it's what makes your training truly individual and your coaching complete.", "n30": "First consultation", "n31": "An in-depth conversation and health intake: routine, health, history and goals. This is where your program is born.", "n32": "Tailor-made program", "n33": "Your plan, built for you and delivered on my platform, with a video for every exercise.", "n34": "Complete coaching", "n35": "I follow your progress closely and adjust whatever's needed, step by step.", "n36": "Who it's for", "n37": "About me"};
 var TXT = {
   pt: { wa: "Oi, Larissa! Vi seu site e quero saber mais.",
         waDuvida: "Oi, Larissa! Tenho uma dúvida antes de começar.",
